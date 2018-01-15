@@ -11,7 +11,8 @@ body {
 @media (min-width: 992px) {
   body {
     padding-top: 0;
-    padding-left: 17rem; } }
+    padding-left: 0;
+    padding-right: 17rem; } }
 
 h1,
 h2,
@@ -58,7 +59,7 @@ h2 {
     text-align: center;
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     width: 17rem;
@@ -87,8 +88,8 @@ h2 {
 
 section.resume-section {
   border-bottom: 1px solid #dee2e6;
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important; }
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important; }
   section.resume-section .resume-item .resume-date {
     min-width: none; }
 
@@ -100,16 +101,16 @@ section.resume-section {
 
 @media (min-width: 992px) {
   section.resume-section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important; } }
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important; } }
 
 .bg-primary {
-  background-color: #BD5D38 !important; }
+  background-color: #8d0e31 !important; }
 
 .text-primary {
-  color: #BD5D38 !important; }
+  color: #8d0e31 !important; }
 
 a {
-  color: #BD5D38; }
+  color: #8d0e31; }
   a:hover, a:focus, a:active {
-    color: #824027; }
+    color: #9d0e31; }
