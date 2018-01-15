@@ -1,6 +1,6 @@
 /*!
  * Start Bootstrap - Resume v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/resume)
- * Copyright 2013-2017 Start Bootstrap
+ * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
 body {
@@ -11,7 +11,6 @@ body {
 @media (min-width: 992px) {
   body {
     padding-top: 0;
-    padding-left: 0;
     padding-right: 17rem; } }
 
 h1,
@@ -41,14 +40,14 @@ h2 {
 .list-social-icons a {
   color: #495057; }
   .list-social-icons a:hover {
-    color: #BD5D38; }
+    color: #8d0e31; }
   .list-social-icons a .fa-lg {
     font-size: 1.75rem; }
 
 .list-icons {
   font-size: 3rem; }
   .list-icons .list-inline-item i:hover {
-    color: #BD5D38; }
+    color: #8d0e31; }
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 600;
@@ -88,8 +87,8 @@ h2 {
 
 section.resume-section {
   border-bottom: 1px solid #dee2e6;
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important; }
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important; }
   section.resume-section .resume-item .resume-date {
     min-width: none; }
 
@@ -101,8 +100,15 @@ section.resume-section {
 
 @media (min-width: 992px) {
   section.resume-section {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important; } }
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important; } }
+
+.resume-img {
+  height: 65px;
+  float: left; }
+
+.resume-heading {
+  float: left; }
 
 .bg-primary {
   background-color: #8d0e31 !important; }
@@ -113,13 +119,11 @@ section.resume-section {
 a {
   color: #8d0e31; }
   a:hover, a:focus, a:active {
-    color: #9d0e31; }
+    color: #470719; }
 
 .resume-img {
   height: 65px;
-  float: left;
-}
+  float: left; }
 
 .resume-heading {
-  float: left;
-}
+  float: left; }
