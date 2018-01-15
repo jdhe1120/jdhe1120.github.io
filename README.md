@@ -1,6 +1,6 @@
 ## Welcome!
 
-Welcome to my personal website! This repository contains the contents of jeffreydinghe.com and runs via GitHub Pages. This theme was adapted from [the Resume Theme](https://startbootstrap.com/template-overviews/resume/) in [Start Bootstrap](http://startbootstrap.com/).
+Welcome to my personal website! This repository contains the contents of jeffreydinghe.com and runs via GitHub Pages. This website's theme was adapted from [the Resume Template](https://startbootstrap.com/template-overviews/resume/) in [Start Bootstrap](http://startbootstrap.com/).
 
 ## Copyright and License
 
