@@ -114,3 +114,12 @@ a {
   color: #8d0e31; }
   a:hover, a:focus, a:active {
     color: #9d0e31; }
+
+.resume-img {
+  height: 65px;
+  float: left;
+}
+
+.resume-heading {
+  float: left;
+}
