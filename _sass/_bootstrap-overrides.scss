@@ -1,0 +1,19 @@
+@use "sass:color";
+@use "variables" as *;
+
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+a {
+  color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    color: color.adjust($primary, $lightness: -15%);
+  }
+}

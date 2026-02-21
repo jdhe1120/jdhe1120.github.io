@@ -1,409 +1,326 @@
-<!DOCTYPE html>
-<html lang="en">
+---
+layout: home
+title: Home
+---
 
-  <head>
+<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+  <div class="my-auto">
+    <h1 class="mb-0">Jeffrey He
+      <span class="text-primary"></span>
+    </h1>
+    <div class="subheading mb-5">
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+    <p class="mb-5">I studied Computer Science at Harvard and graduated in 2020. Some of my favorite things include teaching, music, and playing basketball!</p>
+    <ul class="list-inline list-social-icons mb-0">
+      <li class="list-inline-item">
+        <a href="mailto:{{ site.email }}">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://github.com/{{ site.github_username }}">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a href="https://www.youtube.com/user/jdhe1120">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+  <div class="my-auto">
+    <h2 class="mb-5">Experience</h2>
 
-    <title>Jeffrey He</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
-
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-
-  </head>
-
-  <body id="page-top">
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">
-        <span class="d-block d-lg-none">Menu</span>
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
-          </li>
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <div>
+          <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/microsoft.png' | relative_url }}" alt="">
+          <h3 class="mb-0 text-md-left">PM Intern</h3>
+          <div class="subheading mb-3 text-md-left">Microsoft</div>
+        </div>
+        <ul>
+          <li>Researched, designed, and implemented a new workflow to improve the monthly support case review process (500 cases/month) for the Azure Stack team</li>
+          <li>Created Python algorithm that predicts action items for certain cases</li>
         </ul>
       </div>
-    </nav>
-
-    <div class="container-fluid p-0">
-
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">Jeffrey He
-            <span class="text-primary"></span>
-          </h1>
-          <div class="subheading mb-5">
-            <a href="mailto:jdhe1120@gmail.com">jdhe1120@gmail.com</a>
-          </div>
-          <p class="mb-5">I studied Computer Science at Harvard and graduated in 2020. Some of my favorite things include teaching, music, and playing basketball!</p>
-          <ul class="list-inline list-social-icons mb-0">
-            <li class="list-inline-item">
-              <a href="mailto:jdhe1120@gmail.com">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/jeffreydinghe">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://github.com/jdhe1120">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.youtube.com/user/jdhe1120">
-                <span class="fa-stack fa-lg">
-                  <i class="fa fa-circle fa-stack-2x"></i>
-                  <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
-                </span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
-        <div class="my-auto">
-          <h2 class="mb-5">Experience</h2>
-
-
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-
-              <div>
-                <img class="img-responsive mr-2 resume-img" src="img/microsoft.png" alt="">
-                <h3 class="mb-0 text-md-left">PM Intern</h3>
-                <div class="subheading mb-3 text-md-left">Microsoft</div>
-              </div>
-
-              <ul>
-                <li>Researched, designed, and implemented a new workflow to improve the monthly support case review process (500 cases/month) for the Azure Stack team</li>
-                <li>Created Python algorithm that predicts action items for certain cases</li>
-              </ul>
-
-
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">May 2019 - August 2019</span>
-            </div>
-          </div>
-
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/microsoft.png" alt="">
-              <h3 class="mb-0">Explorer Intern</h3>
-              <div class="subheading mb-3">Microsoft</div>
-              <ul>
-                <li>Built a new Microsoft Store feature (using Angular, Typescript, C#, and Jasmine) that provides publishers a detailed history of their product submissions broken down by category</li>
-                <li>Feature shipped to all Microsoft Store publishers</li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">May 2018 - August 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <h3 class="mb-0">Teaching Fellow</h3>
-              <div class="subheading mb-3">Harvard University</div>
-              <ul>
-                <li>Taught Machine Learning (CS181), Economics and Computation (CS136), Artificial Intelligence (CS182), Functional Programming (CS51), Intro to Computer Science (CS50)</li>
-                <li>Led weekly sections of 20 undergraduates, held office hours, designed and graded problem sets</li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2017 - Present</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard-seas.jpeg" alt="">
-              <h3 class="mb-0">Undergraduate Researcher</h3>
-              <div class="subheading mb-3">Harvard Data to Actionable Knowledge Lab</div>
-              <ul>
-                <li>Ran research study on 600 subjects regarding the interpretability of ML algorithms</li>
-                <li>Published paper at <a href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ’19</a> (“Human Evaluation of Models Built for Interpretability”)</li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2017 - Present</span>
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
-        <div class="my-auto">
-          <h2 class="mb-5">Education</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <h3 class="mb-0">Harvard University</h3>
-              <div class="subheading mb-3">Computer Science, AB Degree</div>
-              <ul>
-                <li>Harvard Open Data Project (President)</li>
-                <li>Harvard Computer Society (Director of Education)</li>
-                <li>Teaching Fellow (CS50, CS51, CS182, CS136, CS181)</li>
-                <li>Harvard Data to Actionable Knowledge Lab (Researcher)</li>
-                <li>Student Mental Health Liaisons, Intramurals Rep (Mather House)</li>
-              </ul>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">August 2016 - May 2020</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
-        <div class="my-auto">
-          <h2 class="mb-5">Projects</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/hodp.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Harvard Open Data Project</h3>
-                <div class="subheading mb-3">
-                  <a href="http://hodp.org/">Website</a>
-                   ·
-                  <a href="https://github.com/Harvard-Open-Data-Project/harvard-open-data-project.github.io">Github</a>
-                </div>
-              </div>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <p>
-                HODP is Harvard's first open data catalog. As a group, our mission is to use public Harvard data to increase transparency and tackle issues on campus.
-
-                We’ve used data science and data visualization techniques to analyze data on <a href="https://medium.com/harvard-open-data-project/literally-nobody-voted-in-the-quincy-midterm-elections-409bf19a59cf">student government election turnout</a>, <a href="https://medium.com/harvard-open-data-project/gender-disparity-in-harvard-faculty-b253ae949a56">faculty gender disparity</a>, and <a href="https://medium.com/harvard-open-data-project/from-ec-to-tech-how-harvard-students-are-changing-concentrations-b748b55ed35b">trends in concentration popularity</a>.
-              </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2017 - May 2020</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/fb.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Facebook Message Analyzer</h3>
-                <div class="subheading mb-3">
-                  <a href="https://github.com/jdhe1120/facebook-message-analyzer">GitHub</a>
-                </div>
-              </div>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <p>
-                This Python script allows you to analyze your FB messages. Specifically, for a given conversation, it prints out a map of the messages you (and others) have sent over time, the average word count of your mesages, and is set up in a way that lets you add any new features easily. I used this for a bootcamp as the Director of Education of the Harvard Computer Society.
-              </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/datamatch.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Datamatch</h3>
-                <div class="subheading mb-3">
-                  <a href="https://datamatch.hcs.harvard.edu/">Website</a>
-                   ·
-                  <a href="http://www.thecrimson.com/article/2016/2/26/datamatch-data-analysis/">Media</a>
-                </div>
-              </div>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <p>
-                Datamatch is a matchmaking service used by ~4000 students each year at Harvard built with Ruby on Rails and React. As the web lead, I led the team in designing the credits and archives page.
-              </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">September 2016 - May 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/propublica.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">ProPublica Non-Profit Scraper</h3>
-                <div class="subheading mb-3">
-                  <a href="https://github.com/Harvard-Open-Data-Project/propublica-data">GitHub</a>
-                </div>
-              </div>
-              <br/>
-              <br/>
-              <br/>
-              <br/>
-              <p>
-                The ProPublica scraper is a python script that uses the <a href="https://projects.propublica.org/nonprofits/api">ProPublica API</a> to retrieve data in CSV format on any list of non-profit US organizations. We used the script to extract data on non-profit student organizations at Harvard.
-              </p>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">December 2016</span>
-            </div>
-          </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
-        <div class="my-auto">
-          <h2 class="mb-5">Awards</h2>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-4">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Extraordinary Teaching in Extraordinary Times</h3>
-                <div class="subheading">Awarded to 281/2500 teaching fellows for the semester of COVID</div>
-              </div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">July 2020</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-4">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Bok Center Certificate of Distinction in Teaching</h3>
-                <div class="subheading">Awarded to Teaching Fellows rated 4.5/5.0 or higher by students</div>
-              </div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2020</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-4">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Bok Center Certificate of Distinction in Teaching</h3>
-                <div class="subheading">Awarded to Teaching Fellows rated 4.5/5.0 or higher by students</div>
-              </div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2019</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-4">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">John Harvard Scholar</h3>
-                <div class="subheading">Awarded to students in the top 5% of their classes</div>
-              </div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">May 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-4">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Bok Center Certificate of Distinction in Teaching</h3>
-                <div class="subheading">Awarded to Teaching Fellows rated 4.5/5.0 or higher by students</div>
-              </div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">January 2018</span>
-            </div>
-          </div>
-
-          <div class="resume-item d-flex flex-column flex-md-row mb-4">
-            <div class="resume-content mr-auto">
-              <img class="img-responsive mr-2 resume-img" src="img/harvard.png" alt="">
-              <div class="resume-heading">
-                <h3 class="mb-0">Detur Book Prize</h3>
-                <div class="subheading">Awarded to students attaining very high academic standing</div>
-              </div>
-            </div>
-            <div class="resume-date text-md-right">
-              <span class="text-primary">October 2017</span>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
+      <div class="resume-date text-md-right">
+        <span class="text-primary">May 2019 - August 2019</span>
+      </div>
     </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/microsoft.png' | relative_url }}" alt="">
+        <h3 class="mb-0">Explorer Intern</h3>
+        <div class="subheading mb-3">Microsoft</div>
+        <ul>
+          <li>Built a new Microsoft Store feature (using Angular, Typescript, C#, and Jasmine) that provides publishers a detailed history of their product submissions broken down by category</li>
+          <li>Feature shipped to all Microsoft Store publishers</li>
+        </ul>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">May 2018 - August 2018</span>
+      </div>
+    </div>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <h3 class="mb-0">Teaching Fellow</h3>
+        <div class="subheading mb-3">Harvard University</div>
+        <ul>
+          <li>Taught Machine Learning (CS181), Economics and Computation (CS136), Artificial Intelligence (CS182), Functional Programming (CS51), Intro to Computer Science (CS50)</li>
+          <li>Led weekly sections of 20 undergraduates, held office hours, designed and graded problem sets</li>
+        </ul>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">August 2017 - Present</span>
+      </div>
+    </div>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard-seas.jpeg' | relative_url }}" alt="">
+        <h3 class="mb-0">Undergraduate Researcher</h3>
+        <div class="subheading mb-3">Harvard Data to Actionable Knowledge Lab</div>
+        <ul>
+          <li>Ran research study on 600 subjects regarding the interpretability of ML algorithms</li>
+          <li>Published paper at <a href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP '19</a> ("Human Evaluation of Models Built for Interpretability")</li>
+        </ul>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">September 2017 - Present</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </body>
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+  <div class="my-auto">
+    <h2 class="mb-5">Education</h2>
 
-</html>
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <h3 class="mb-0">Harvard University</h3>
+        <div class="subheading mb-3">Computer Science, AB Degree</div>
+        <ul>
+          <li>Harvard Open Data Project (President)</li>
+          <li>Harvard Computer Society (Director of Education)</li>
+          <li>Teaching Fellow (CS50, CS51, CS182, CS136, CS181)</li>
+          <li>Harvard Data to Actionable Knowledge Lab (Researcher)</li>
+          <li>Student Mental Health Liaisons, Intramurals Rep (Mather House)</li>
+        </ul>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">August 2016 - May 2020</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+  <div class="my-auto">
+    <h2 class="mb-5">Projects</h2>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/hodp.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Harvard Open Data Project</h3>
+          <div class="subheading mb-3">
+            <a href="http://hodp.org/">Website</a>
+             ·
+            <a href="https://github.com/Harvard-Open-Data-Project/harvard-open-data-project.github.io">Github</a>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+          HODP is Harvard's first open data catalog. As a group, our mission is to use public Harvard data to increase transparency and tackle issues on campus.
+
+          We've used data science and data visualization techniques to analyze data on <a href="https://medium.com/harvard-open-data-project/literally-nobody-voted-in-the-quincy-midterm-elections-409bf19a59cf">student government election turnout</a>, <a href="https://medium.com/harvard-open-data-project/gender-disparity-in-harvard-faculty-b253ae949a56">faculty gender disparity</a>, and <a href="https://medium.com/harvard-open-data-project/from-ec-to-tech-how-harvard-students-are-changing-concentrations-b748b55ed35b">trends in concentration popularity</a>.
+        </p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">January 2017 - May 2020</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/fb.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Facebook Message Analyzer</h3>
+          <div class="subheading mb-3">
+            <a href="https://github.com/jdhe1120/facebook-message-analyzer">GitHub</a>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+          This Python script allows you to analyze your FB messages. Specifically, for a given conversation, it prints out a map of the messages you (and others) have sent over time, the average word count of your mesages, and is set up in a way that lets you add any new features easily. I used this for a bootcamp as the Director of Education of the Harvard Computer Society.
+        </p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">September 2018</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/datamatch.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Datamatch</h3>
+          <div class="subheading mb-3">
+            <a href="https://datamatch.hcs.harvard.edu/">Website</a>
+             ·
+            <a href="http://www.thecrimson.com/article/2016/2/26/datamatch-data-analysis/">Media</a>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+          Datamatch is a matchmaking service used by ~4000 students each year at Harvard built with Ruby on Rails and React. As the web lead, I led the team in designing the credits and archives page.
+        </p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">September 2016 - May 2018</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/propublica.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">ProPublica Non-Profit Scraper</h3>
+          <div class="subheading mb-3">
+            <a href="https://github.com/Harvard-Open-Data-Project/propublica-data">GitHub</a>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+          The ProPublica scraper is a python script that uses the <a href="https://projects.propublica.org/nonprofits/api">ProPublica API</a> to retrieve data in CSV format on any list of non-profit US organizations. We used the script to extract data on non-profit student organizations at Harvard.
+        </p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">December 2016</span>
+      </div>
+    </div>
+</section>
+
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+  <div class="my-auto">
+    <h2 class="mb-5">Awards</h2>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-4">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Extraordinary Teaching in Extraordinary Times</h3>
+          <div class="subheading">Awarded to 281/2500 teaching fellows for the semester of COVID</div>
+        </div>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">July 2020</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-4">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Bok Center Certificate of Distinction in Teaching</h3>
+          <div class="subheading">Awarded to Teaching Fellows rated 4.5/5.0 or higher by students</div>
+        </div>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">January 2020</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-4">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Bok Center Certificate of Distinction in Teaching</h3>
+          <div class="subheading">Awarded to Teaching Fellows rated 4.5/5.0 or higher by students</div>
+        </div>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">January 2019</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-4">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">John Harvard Scholar</h3>
+          <div class="subheading">Awarded to students in the top 5% of their classes</div>
+        </div>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">May 2018</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-4">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Bok Center Certificate of Distinction in Teaching</h3>
+          <div class="subheading">Awarded to Teaching Fellows rated 4.5/5.0 or higher by students</div>
+        </div>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">January 2018</span>
+      </div>
+    </div>
+
+    <div class="resume-item d-flex flex-column flex-md-row mb-4">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ '/assets/img/harvard.png' | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">Detur Book Prize</h3>
+          <div class="subheading">Awarded to students attaining very high academic standing</div>
+        </div>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">October 2017</span>
+      </div>
+    </div>
+
+  </div>
+</section>

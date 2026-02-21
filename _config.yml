@@ -1,0 +1,51 @@
+# Site settings
+title: Jeffrey He
+email: jdhe1120@gmail.com
+description: >-
+  Personal portfolio and blog of Jeffrey He - Computer Science graduate
+  from Harvard University, former Microsoft PM Intern, and passionate educator.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://jeffreydinghe.com" # your custom domain
+twitter_username: ""
+github_username: jdhe1120
+linkedin_username: jeffreydinghe
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - package.json
+  - package-lock.json
+  - README.md
+  - LICENSE
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Jeffrey He"
+
+# Sass/SCSS settings
+sass:
+  sass_dir: _sass
+  style: compressed

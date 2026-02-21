@@ -1,1 +1,17 @@
+# Node
 node_modules
+package-lock.json
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
+
+# macOS
+.DS_Store
+
+# Old build artifacts (can be removed after migration)
+css/
+scss/resume.scss
