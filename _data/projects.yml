@@ -1,3 +1,13 @@
+- name: Cantonese Level Up
+  img: img/cantonese.png
+  dates: Feb 2026
+  links:
+    - label: Github
+      url: "https://github.com/jdhe1120/cantonese-level-up"
+  description: |
+    Cantonese Level Up is an app I built for myself to improve my ability to understand and speak Cantonese.
+    Leveraging Claude Code (primarily Opus 4.6), I've been able create a language app completely personalized to where I am today. It knows that I prefer an English UI, that I am already fluent at Mandarin, and that I can understand basic Cantonese, but can't speak.
+
 - name: Harvard Open Data Project
   img: img/hodp.png
   dates: January 2017 - May 2020
