@@ -1,5 +1,5 @@
-- label: About
-  anchor: about
+- label: Home
+  anchor: page-top
 - label: Experience
   anchor: experience
 - label: Education

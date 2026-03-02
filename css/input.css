@@ -39,7 +39,7 @@
   @media (min-width: 992px) {
     body {
       padding-top: 0;
-      padding-right: var(--spacing-sidebar);
+      padding-left: var(--spacing-sidebar);
     }
   }
 
@@ -116,7 +116,7 @@
       text-align: center;
       position: fixed;
       top: 0;
-      right: 0;
+      left: 0;
       display: flex;
       flex-direction: column;
       width: var(--spacing-sidebar);
