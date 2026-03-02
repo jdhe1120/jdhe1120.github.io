@@ -1,0 +1,10 @@
+- label: About
+  anchor: about
+- label: Experience
+  anchor: experience
+- label: Education
+  anchor: education
+- label: Projects
+  anchor: projects
+- label: Awards
+  anchor: awards

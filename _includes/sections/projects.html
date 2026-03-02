@@ -1,0 +1,28 @@
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+  <div class="my-auto">
+    <h2 class="mb-5">Projects</h2>
+
+    {% for project in site.data.projects %}
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ project.img | relative_url }}" alt="">
+        <div class="resume-heading">
+          <h3 class="mb-0">{{ project.name }}</h3>
+          <div class="subheading mb-3">
+            {% for link in project.links %}{% if forloop.index > 1 %} &middot; {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+          {{ project.description }}
+        </p>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">{{ project.dates }}</span>
+      </div>
+    </div>
+    {% endfor %}
+</section>

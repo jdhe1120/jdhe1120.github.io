@@ -1,0 +1,10 @@
+- institution: Harvard University
+  degree: "Computer Science, AB Degree"
+  img: img/harvard.png
+  dates: August 2016 - May 2020
+  bullets:
+    - Harvard Open Data Project (President)
+    - Harvard Computer Society (Director of Education)
+    - "Teaching Fellow (CS50, CS51, CS182, CS136, CS181)"
+    - Harvard Data to Actionable Knowledge Lab (Researcher)
+    - "Student Mental Health Liaisons, Intramurals Rep (Mather House)"

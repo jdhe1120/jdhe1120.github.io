@@ -1,0 +1,23 @@
+<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+  <div class="my-auto">
+    <h2 class="mb-5">Education</h2>
+
+    {% for edu in site.data.education %}
+    <div class="resume-item d-flex flex-column flex-md-row mb-5">
+      <div class="resume-content mr-auto">
+        <img class="img-responsive mr-2 resume-img" src="{{ edu.img | relative_url }}" alt="">
+        <h3 class="mb-0">{{ edu.institution }}</h3>
+        <div class="subheading mb-3">{{ edu.degree }}</div>
+        <ul>
+          {% for bullet in edu.bullets %}
+          <li>{{ bullet }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="resume-date text-md-right">
+        <span class="text-primary">{{ edu.dates }}</span>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>

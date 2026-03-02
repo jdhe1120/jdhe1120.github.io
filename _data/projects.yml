@@ -1,0 +1,41 @@
+- name: Harvard Open Data Project
+  img: img/hodp.png
+  dates: January 2017 - May 2020
+  links:
+    - label: Website
+      url: "http://hodp.org/"
+    - label: Github
+      url: "https://github.com/Harvard-Open-Data-Project/harvard-open-data-project.github.io"
+  description: |
+    HODP is Harvard's first open data catalog. As a group, our mission is to use public Harvard data to increase transparency and tackle issues on campus.
+
+    We've used data science and data visualization techniques to analyze data on <a href="https://medium.com/harvard-open-data-project/literally-nobody-voted-in-the-quincy-midterm-elections-409bf19a59cf">student government election turnout</a>, <a href="https://medium.com/harvard-open-data-project/gender-disparity-in-harvard-faculty-b253ae949a56">faculty gender disparity</a>, and <a href="https://medium.com/harvard-open-data-project/from-ec-to-tech-how-harvard-students-are-changing-concentrations-b748b55ed35b">trends in concentration popularity</a>.
+
+- name: Facebook Message Analyzer
+  img: img/fb.png
+  dates: September 2018
+  links:
+    - label: GitHub
+      url: "https://github.com/jdhe1120/facebook-message-analyzer"
+  description: |
+    This Python script allows you to analyze your FB messages. Specifically, for a given conversation, it prints out a map of the messages you (and others) have sent over time, the average word count of your mesages, and is set up in a way that lets you add any new features easily. I used this for a bootcamp as the Director of Education of the Harvard Computer Society.
+
+- name: Datamatch
+  img: img/datamatch.png
+  dates: September 2016 - May 2018
+  links:
+    - label: Website
+      url: "https://datamatch.hcs.harvard.edu/"
+    - label: Media
+      url: "http://www.thecrimson.com/article/2016/2/26/datamatch-data-analysis/"
+  description: |
+    Datamatch is a matchmaking service used by ~4000 students each year at Harvard built with Ruby on Rails and React. As the web lead, I led the team in designing the credits and archives page.
+
+- name: ProPublica Non-Profit Scraper
+  img: img/propublica.png
+  dates: December 2016
+  links:
+    - label: GitHub
+      url: "https://github.com/Harvard-Open-Data-Project/propublica-data"
+  description: |
+    The ProPublica scraper is a python script that uses the <a href="https://projects.propublica.org/nonprofits/api">ProPublica API</a> to retrieve data in CSV format on any list of non-profit US organizations. We used the script to extract data on non-profit student organizations at Harvard.

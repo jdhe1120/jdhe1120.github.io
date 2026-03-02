@@ -1,0 +1,25 @@
+title: Jeffrey He
+email: jdhe1120@gmail.com
+bio: "I studied Computer Science at Harvard and graduated in 2020. Some of my favorite things include teaching, music, and playing basketball!"
+profile_img: img/profile.jpg
+url: "https://jeffreydinghe.com"
+
+# Build settings
+markdown: kramdown
+
+# Include vendor directory (Jekyll excludes it by default)
+include:
+  - vendor
+
+# Exclude dev/build files from the Jekyll site
+exclude:
+  - node_modules
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - scss
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.md"
+  - "!index.md"

@@ -4,11 +4,18 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal portfolio/resume website for jeffreydinghe.com, hosted via GitHub Pages. Built on the Start Bootstrap Resume template using Bootstrap 4, jQuery, and SCSS.
+Personal portfolio/resume website for jeffreydinghe.com, hosted via GitHub Pages. Built on the Start Bootstrap Resume template using Bootstrap 4 (CSS only) and SCSS. JavaScript is vanilla (no jQuery).
 
 ## Build & Development
 
-Requires Node.js and gulp (v3). After `npm install`:
+### Jekyll (site generator)
+Requires Ruby and Bundler. After `bundle install`:
+
+- **`bundle exec jekyll serve`** — local dev server at `localhost:4000` with auto-regeneration
+- **`bundle exec jekyll build`** — build site to `_site/`
+
+### Gulp (SCSS/JS compilation)
+Requires Node.js and Gulp 4. After `npm install`:
 
 - **`gulp dev`** — local dev server with BrowserSync + file watching (SCSS, CSS, JS, HTML)
 - **`gulp`** — default build: compiles SCSS, minifies CSS and JS, copies vendor files
@@ -19,32 +26,41 @@ Requires Node.js and gulp (v3). After `npm install`:
 
 ## Architecture
 
-Single-page site (`index.html`) with sections: About, Experience, Education, Projects, Awards. Navigation is a fixed sidebar that collapses on mobile.
+Single-page site built with Jekyll. Content is data-driven via `_data/` YAML files. Navigation is a fixed sidebar that collapses on mobile.
 
+- **`_config.yml`** — Jekyll site config (metadata, build settings, exclude list)
+- **`_layouts/default.html`** — HTML shell layout (head, nav, scripts)
+- **`_includes/`** — reusable partials (`head.html`, `nav.html`, `sections/*.html`)
+- **`_data/`** — structured content in YAML (`nav`, `social`, `experience`, `education`, `projects`, `awards`)
+- **`index.html`** — front matter + section includes (assembles the page)
 - **`scss/`** — SCSS source files (`_variables.scss`, `_mixins.scss`, `_global.scss`, `_nav.scss`, `_resume-item.scss`, `_bootstrap-overrides.scss`), compiled via `resume.scss`
 - **`css/`** — compiled output (`resume.css`, `resume.min.css`) — do not edit directly
-- **`js/resume.js`** — smooth scrolling, responsive menu toggle, scrollspy (jQuery)
-- **`vendor/`** — vendored copies of Bootstrap, jQuery, Font Awesome, Devicons, Simple Line Icons
+- **`js/resume.js`** — smooth scrolling (`scrollIntoView`), responsive menu toggle, scrollspy (`IntersectionObserver`) — vanilla JS, no jQuery
+- **`vendor/`** — vendored copies of Bootstrap (CSS only), Font Awesome, Devicons, Simple Line Icons
 - **`img/`** — profile photo, favicon, project/company logos
 - **`CNAME`** — custom domain config (jeffreydinghe.com)
 
 ## Key Notes
 
 - Edit SCSS files in `scss/`, not CSS files directly. Run `gulp` or `gulp sass` to recompile.
-- `index.html` references minified assets (`resume.min.css`, `resume.min.js`). After editing JS or SCSS, rebuild minified versions.
-- Deploys automatically via GitHub Pages on push to `master`.
+- Site content lives in `_data/*.yml` files — edit those, not the HTML templates.
+- `_includes/sections/*.html` are Liquid templates that loop over `_data/` files.
+- After editing JS or SCSS, run `gulp` to rebuild minified versions.
+- Deploys via GitHub Actions on push to `master` (uses `jekyll build`).
+- **Manual setup required**: In repo Settings → Pages → Source, select "GitHub Actions" (not "Deploy from a branch").
 
 ## Modernization TODOs
 
 The site is ~8 years old (Start Bootstrap Resume template, 2017). The plan is to modernize with **Jekyll** (native GitHub Pages SSG with blog support) and **Tailwind CSS**.
 
-### 1. Migrate to Jekyll
-- Convert `index.html` to Jekyll project structure (`_layouts/`, `_includes/`, `_config.yml`)
-- Set up Jekyll-compatible directory structure
-- Create reusable layout templates (default, page, post)
-- Extract repeated HTML sections (nav, head, footer) into `_includes/`
-- Configure `_config.yml` with site metadata, permalink structure, and build settings
-- Update CNAME and GitHub Pages settings for Jekyll builds
+### ~~1. Migrate to Jekyll~~ ✅ DONE
+- ~~Convert `index.html` to Jekyll project structure (`_layouts/`, `_includes/`, `_config.yml`)~~
+- ~~Set up Jekyll-compatible directory structure~~
+- ~~Create reusable layout templates (default, page, post)~~
+- ~~Extract repeated HTML sections (nav, head, footer) into `_includes/`~~
+- ~~Configure `_config.yml` with site metadata, permalink structure, and build settings~~
+- ~~GitHub Actions workflow for deployment~~
+- Update GitHub Pages settings: Source → "GitHub Actions" (manual step)
 
 ### 2. Replace CSS Framework with Tailwind
 - Remove Bootstrap 4 beta and all vendored CSS
@@ -54,15 +70,15 @@ The site is ~8 years old (Start Bootstrap Resume template, 2017). The plan is to
 - Remove the entire `scss/` directory and compiled CSS once migration is complete
 - Ensure responsive design works with Tailwind breakpoints
 
-### 3. Remove jQuery & Modernize JS
-- Rewrite smooth scrolling with native `scroll-behavior: smooth` CSS + `scrollIntoView()`
-- Rewrite menu toggle with vanilla JS
-- Replace jQuery scrollspy with Intersection Observer API
-- Remove jQuery, jQuery Easing, Popper.js dependencies
-- Delete `vendor/` directory entirely
+### 3. ~~Remove jQuery & Modernize JS~~ ✅ DONE
+- ~~Rewrite smooth scrolling with native `scroll-behavior: smooth` CSS + `scrollIntoView()`~~
+- ~~Rewrite menu toggle with vanilla JS~~
+- ~~Replace jQuery scrollspy with Intersection Observer API~~
+- ~~Remove jQuery, jQuery Easing, Popper.js dependencies~~
+- Clean up `vendor/jquery/` and `vendor/jquery-easing/` directories (dead files, can delete)
 
 ### 4. Replace Build Tooling
-- Remove Gulp 3 and all gulp-* devDependencies
+- Remove Gulp 4 and all gulp-* devDependencies (already upgraded from Gulp 3)
 - Remove `gulpfile.js`
 - Let Jekyll handle the build pipeline (or add a minimal PostCSS step for Tailwind)
 - Remove IE8 compatibility targeting

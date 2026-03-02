@@ -1,0 +1,31 @@
+- title: PM Intern
+  company: Microsoft
+  img: img/microsoft.png
+  dates: May 2019 - August 2019
+  bullets:
+    - "Researched, designed, and implemented a new workflow to improve the monthly support case review process (500 cases/month) for the Azure Stack team"
+    - Created Python algorithm that predicts action items for certain cases
+
+- title: Explorer Intern
+  company: Microsoft
+  img: img/microsoft.png
+  dates: May 2018 - August 2018
+  bullets:
+    - "Built a new Microsoft Store feature (using Angular, Typescript, C#, and Jasmine) that provides publishers a detailed history of their product submissions broken down by category"
+    - Feature shipped to all Microsoft Store publishers
+
+- title: Teaching Fellow
+  company: Harvard University
+  img: img/harvard.png
+  dates: August 2017 - Present
+  bullets:
+    - "Taught Machine Learning (CS181), Economics and Computation (CS136), Artificial Intelligence (CS182), Functional Programming (CS51), Intro to Computer Science (CS50)"
+    - "Led weekly sections of 20 undergraduates, held office hours, designed and graded problem sets"
+
+- title: Undergraduate Researcher
+  company: Harvard Data to Actionable Knowledge Lab
+  img: img/harvard-seas.jpeg
+  dates: September 2017 - Present
+  bullets:
+    - Ran research study on 600 subjects regarding the interpretability of ML algorithms
+    - 'Published paper at <a href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19</a> ("Human Evaluation of Models Built for Interpretability")'
