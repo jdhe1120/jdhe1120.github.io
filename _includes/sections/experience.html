@@ -5,10 +5,14 @@
     {% for job in site.data.experience %}
     <div class="resume-item flex flex-col md:flex-row mb-12">
       <div class="mr-auto">
-        <img class="resume-img mr-2" src="{{ job.img | relative_url }}" alt="">
-        <h3 class="mb-0">{{ job.title }}</h3>
-        <div class="subheading mb-4">{{ job.company }}</div>
-        <ul>
+        <div class="resume-header gap-3">
+          <img class="resume-img" src="{{ job.img | relative_url }}" alt="">
+          <div>
+            <h3 class="mb-0">{{ job.title }}</h3>
+            <div class="subheading mb-4">{{ job.company }}</div>
+          </div>
+        </div>
+        <ul class="list-disc ml-6">
           {% for bullet in job.bullets %}
           <li>{{ bullet }}</li>
           {% endfor %}

@@ -183,13 +183,18 @@
     }
   }
 
-  .resume-img {
-    height: 65px;
-    float: left;
+  .resume-header {
+    display: flex;
+    align-items: flex-start;
   }
 
-  .resume-heading {
-    float: left;
+  .resume-img {
+    height: 56px;
+    flex-shrink: 0;
+  }
+
+  .resume-header h3 {
+    line-height: 1;
   }
 
   /* Social icons */

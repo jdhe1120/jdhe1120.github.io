@@ -5,17 +5,15 @@
     {% for project in site.data.projects %}
     <div class="resume-item flex flex-col md:flex-row mb-12">
       <div class="mr-auto">
-        <img class="resume-img mr-2" src="{{ project.img | relative_url }}" alt="">
-        <div class="resume-heading">
-          <h3 class="mb-0">{{ project.name }}</h3>
-          <div class="subheading mb-4">
-            {% for link in project.links %}{% if forloop.index > 1 %} &middot; {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+        <div class="resume-header gap-3">
+          <img class="resume-img" src="{{ project.img | relative_url }}" alt="">
+          <div>
+            <h3 class="mb-0">{{ project.name }}</h3>
+            <div class="subheading mb-4">
+              {% for link in project.links %}{% if forloop.index > 1 %} &middot; {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+            </div>
           </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
         <p>
           {{ project.description }}
         </p>
