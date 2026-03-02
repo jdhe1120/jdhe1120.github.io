@@ -1,15 +1,15 @@
-<section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+<section class="resume-section px-4 lg:px-12 flex flex-col" id="about">
   <div class="my-auto">
     <h1 class="mb-0">{{ site.title }}
       <span class="text-primary"></span>
     </h1>
-    <div class="subheading mb-5">
+    <div class="subheading mb-12">
       <a href="mailto:{{ site.email }}">{{ site.email }}</a>
     </div>
-    <p class="mb-5">{{ site.bio }}</p>
-    <ul class="list-inline list-social-icons mb-0">
+    <p class="mb-12">{{ site.bio }}</p>
+    <ul class="list-social-icons flex flex-wrap list-none p-0 mb-0">
       {% for social in site.data.social %}
-      <li class="list-inline-item">
+      <li class="mr-2">
         <a href="{{ social.url }}">
           <span class="fa-stack fa-lg">
             <i class="fas fa-circle fa-stack-2x"></i>

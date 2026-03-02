@@ -1,18 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="sideNav">
-  <a class="navbar-brand js-scroll-trigger" href="#page-top">
-    <span class="d-block d-lg-none">Menu</span>
-    <span class="d-none d-lg-block">
-      <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ site.profile_img | relative_url }}" alt="">
+<nav class="bg-primary text-white lg:flex lg:flex-col" id="sideNav">
+  <a class="navbar-brand js-scroll-trigger block p-4 lg:p-0" href="#page-top">
+    <span class="lg:hidden text-white font-heading text-xl uppercase font-bold">Menu</span>
+    <span class="hidden lg:block">
+      <img class="img-profile max-w-full h-auto rounded-full mx-auto mb-2" src="{{ site.profile_img | relative_url }}" alt="">
     </span>
   </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="absolute top-4 right-4 lg:hidden text-white" type="button" id="navToggler" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+    </svg>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav">
+  <div class="hidden lg:flex" id="navMenu">
+    <ul class="flex flex-col list-none p-0 w-full">
       {% for item in site.data.nav %}
-      <li class="nav-item">
-        <a class="nav-link js-scroll-trigger" href="#{{ item.anchor }}">{{ item.label }}</a>
+      <li>
+        <a class="nav-link js-scroll-trigger block py-2 px-4 text-white/75 hover:text-white no-underline" href="#{{ item.anchor }}">{{ item.label }}</a>
       </li>
       {% endfor %}
     </ul>

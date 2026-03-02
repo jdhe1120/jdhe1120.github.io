@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal portfolio/resume website for jeffreydinghe.com, hosted via GitHub Pages. Built on the Start Bootstrap Resume template using Bootstrap 4 (CSS only) and SCSS. JavaScript is vanilla (no jQuery).
+Personal portfolio/resume website for jeffreydinghe.com, hosted via GitHub Pages. Built on the Start Bootstrap Resume template using Tailwind CSS v4. JavaScript is vanilla (no jQuery).
 
 ## Build & Development
 
@@ -14,15 +14,14 @@ Requires Ruby and Bundler. After `bundle install`:
 - **`bundle exec jekyll serve`** — local dev server at `localhost:4000` with auto-regeneration
 - **`bundle exec jekyll build`** — build site to `_site/`
 
-### Gulp (SCSS/JS compilation)
-Requires Node.js and Gulp 4. After `npm install`:
+### Tailwind CSS (styling)
+Requires Node.js. After `npm install`:
 
-- **`gulp dev`** — local dev server with BrowserSync + file watching (SCSS, CSS, JS, HTML)
-- **`gulp`** — default build: compiles SCSS, minifies CSS and JS, copies vendor files
-- **`gulp sass`** — compile `scss/resume.scss` → `css/resume.css`
-- **`gulp minify-css`** — minify CSS (depends on sass task)
+- **`npm run css:build`** — compile `css/input.css` → `css/resume.min.css` (minified)
+- **`npm run css:watch`** — watch mode for development
+
+### Gulp (JS minification)
 - **`gulp minify-js`** — minify `js/resume.js` → `js/resume.min.js`
-- **`gulp copy`** — copy vendor deps from node_modules to `vendor/`
 
 ## Architecture
 
@@ -33,20 +32,19 @@ Single-page site built with Jekyll. Content is data-driven via `_data/` YAML fil
 - **`_includes/`** — reusable partials (`head.html`, `nav.html`, `sections/*.html`)
 - **`_data/`** — structured content in YAML (`nav`, `social`, `experience`, `education`, `projects`, `awards`)
 - **`index.html`** — front matter + section includes (assembles the page)
-- **`scss/`** — SCSS source files (`_variables.scss`, `_mixins.scss`, `_global.scss`, `_nav.scss`, `_resume-item.scss`, `_bootstrap-overrides.scss`), compiled via `resume.scss`
-- **`css/`** — compiled output (`resume.css`, `resume.min.css`) — do not edit directly
+- **`css/input.css`** — Tailwind CSS source with `@theme` config and `@layer` custom styles
+- **`css/resume.min.css`** — compiled Tailwind output (do not edit directly)
 - **`js/resume.js`** — smooth scrolling (`scrollIntoView`), responsive menu toggle, scrollspy (`IntersectionObserver`) — vanilla JS, no jQuery
-- **`vendor/`** — vendored copy of Bootstrap (CSS only); icons via Font Awesome 6 CDN
 - **`img/`** — profile photo, favicon, project/company logos
 - **`CNAME`** — custom domain config (jeffreydinghe.com)
 
 ## Key Notes
 
-- Edit SCSS files in `scss/`, not CSS files directly. Run `gulp` or `gulp sass` to recompile.
+- Edit styles in `css/input.css`, not `css/resume.min.css` directly. Run `npm run css:build` to recompile.
 - Site content lives in `_data/*.yml` files — edit those, not the HTML templates.
 - `_includes/sections/*.html` are Liquid templates that loop over `_data/` files.
-- After editing JS or SCSS, run `gulp` to rebuild minified versions.
-- Deploys via GitHub Actions on push to `master` (uses `jekyll build`).
+- After editing CSS, run `npm run css:build`. After editing JS, run `gulp minify-js`.
+- Deploys via GitHub Actions on push to `master` (builds Tailwind CSS, then `jekyll build`).
 - **Manual setup required**: In repo Settings → Pages → Source, select "GitHub Actions" (not "Deploy from a branch").
 
 ## Modernization TODOs
@@ -62,20 +60,20 @@ The site is ~8 years old (Start Bootstrap Resume template, 2017). The plan is to
 - ~~GitHub Actions workflow for deployment~~
 - Update GitHub Pages settings: Source → "GitHub Actions" (manual step)
 
-### 2. Replace CSS Framework with Tailwind
-- Remove Bootstrap 4 beta and all vendored CSS
-- Install and configure Tailwind CSS (via Jekyll plugin or PostCSS build step)
-- Rewrite all styles using Tailwind utility classes
-- Replace SCSS variables/mixins with Tailwind theme config and CSS custom properties
-- Remove the entire `scss/` directory and compiled CSS once migration is complete
-- Ensure responsive design works with Tailwind breakpoints
+### ~~2. Replace CSS Framework with Tailwind~~ ✅ DONE
+- ~~Remove Bootstrap 4 beta and all vendored CSS~~
+- ~~Install and configure Tailwind CSS v4 (via `@tailwindcss/cli`)~~
+- ~~Rewrite all styles using Tailwind utility classes~~
+- ~~Replace SCSS variables/mixins with Tailwind `@theme` config and CSS custom properties~~
+- ~~Remove the entire `scss/` directory and compiled CSS once migration is complete~~
+- ~~Ensure responsive design works with Tailwind breakpoints~~
 
 ### 3. ~~Remove jQuery & Modernize JS~~ ✅ DONE
 - ~~Rewrite smooth scrolling with native `scroll-behavior: smooth` CSS + `scrollIntoView()`~~
 - ~~Rewrite menu toggle with vanilla JS~~
 - ~~Replace jQuery scrollspy with Intersection Observer API~~
 - ~~Remove jQuery, jQuery Easing, Popper.js dependencies~~
-- Clean up `vendor/jquery/` and `vendor/jquery-easing/` directories (dead files, can delete)
+- ~~Clean up `vendor/jquery/` and `vendor/jquery-easing/` directories (dead files, can delete)~~ ✅ removed in step 2
 
 ### 4. Replace Build Tooling
 - Remove Gulp 4 and all gulp-* devDependencies (already upgraded from Gulp 3)

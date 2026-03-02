@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+@source "../_layouts";
+@source "../_includes";
+@source "../index.html";
+
+@theme {
+  --color-primary: #8d0e31;
+  --color-primary-dark: #48071a;
+  --color-body: #868e96;
+  --color-heading: #343a40;
+  --color-section-border: #dee2e6;
+  --color-social: #495057;
+
+  --font-heading: "Saira Extra Condensed", serif;
+  --font-body: "Open Sans", serif;
+
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  --spacing-sidebar: 17rem;
+}
+
+/* === Base styles === */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    padding-top: 54px;
+    color: var(--color-body);
+  }
+
+  @media (min-width: 992px) {
+    body {
+      padding-top: 0;
+      padding-right: var(--spacing-sidebar);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-heading);
+  }
+
+  h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  a {
+    color: var(--color-primary);
+  }
+
+  a:hover, a:focus, a:active {
+    color: var(--color-primary-dark);
+  }
+}
+
+/* === Component styles === */
+
+@layer components {
+  .subheading {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+  }
+
+  /* Sidebar navigation */
+  #sideNav .nav-link {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 992px) {
+    #sideNav {
+      text-align: center;
+      position: fixed;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      width: var(--spacing-sidebar);
+      height: 100vh;
+    }
+
+    #sideNav .navbar-brand {
+      display: flex;
+      margin: auto auto 0;
+      padding: 0.5rem;
+    }
+
+    #sideNav .img-profile {
+      max-width: 10rem;
+      max-height: 10rem;
+      border: 0.5rem solid rgb(255 255 255 / 0.2);
+    }
+
+    #sideNav #navMenu {
+      display: flex !important;
+      align-items: flex-start;
+      flex-grow: 0;
+      width: 100%;
+      margin-bottom: auto;
+    }
+
+    #sideNav #navMenu ul {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #sideNav #navMenu .nav-link {
+      display: block;
+    }
+  }
+
+  /* Active nav link from scrollspy */
+  .nav-link.active {
+    color: white;
+    font-weight: 700;
+  }
+
+  /* Resume sections */
+  .resume-section {
+    border-bottom: 1px solid var(--color-section-border);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .resume-section {
+      min-height: 100vh;
+    }
+
+    .resume-date {
+      min-width: 18rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .resume-section {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  .resume-img {
+    height: 65px;
+    float: left;
+  }
+
+  .resume-heading {
+    float: left;
+  }
+
+  /* Social icons */
+  .list-social-icons a {
+    color: var(--color-social);
+  }
+
+  .list-social-icons a:hover {
+    color: var(--color-primary);
+  }
+
+  .list-social-icons .fa-lg {
+    font-size: 1.75rem;
+  }
+}

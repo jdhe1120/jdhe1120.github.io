@@ -7,17 +7,13 @@ url: "https://jeffreydinghe.com"
 # Build settings
 markdown: kramdown
 
-# Include vendor directory (Jekyll excludes it by default)
-include:
-  - vendor
-
 # Exclude dev/build files from the Jekyll site
 exclude:
   - node_modules
   - gulpfile.js
   - package.json
   - package-lock.json
-  - scss
+  - css/input.css
   - CLAUDE.md
   - Gemfile
   - Gemfile.lock

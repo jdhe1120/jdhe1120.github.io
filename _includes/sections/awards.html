@@ -1,17 +1,17 @@
-<section class="resume-section p-3 p-lg-5 d-flex flex-column" id="awards">
+<section class="resume-section px-4 lg:px-12 flex flex-col" id="awards">
   <div class="my-auto">
-    <h2 class="mb-5">Awards</h2>
+    <h2 class="mb-12">Awards</h2>
 
     {% for award in site.data.awards %}
-    <div class="resume-item d-flex flex-column flex-md-row mb-4">
-      <div class="resume-content mr-auto">
-        <img class="img-responsive mr-2 resume-img" src="{{ award.img | relative_url }}" alt="">
+    <div class="resume-item flex flex-col md:flex-row mb-6">
+      <div class="mr-auto">
+        <img class="resume-img mr-2" src="{{ award.img | relative_url }}" alt="">
         <div class="resume-heading">
           <h3 class="mb-0">{{ award.title }}</h3>
           <div class="subheading">{{ award.subtitle }}</div>
         </div>
       </div>
-      <div class="resume-date text-md-right">
+      <div class="resume-date md:text-right">
         <span class="text-primary">{{ award.date }}</span>
       </div>
     </div>

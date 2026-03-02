@@ -1,6 +1,17 @@
 (function() {
   'use strict';
 
+  // Mobile nav toggle
+  var toggler = document.getElementById('navToggler');
+  var navMenu = document.getElementById('navMenu');
+
+  if (toggler && navMenu) {
+    toggler.addEventListener('click', function() {
+      var isHidden = navMenu.classList.toggle('hidden');
+      toggler.setAttribute('aria-expanded', !isHidden);
+    });
+  }
+
   // Smooth scrolling for nav links
   document.querySelectorAll('a.js-scroll-trigger[href*="#"]:not([href="#"])').forEach(function(link) {
     link.addEventListener('click', function(e) {
@@ -18,10 +29,8 @@
   // Close responsive menu when a scroll trigger link is clicked
   document.querySelectorAll('.js-scroll-trigger').forEach(function(link) {
     link.addEventListener('click', function() {
-      var navbarCollapse = document.querySelector('.navbar-collapse');
-      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-        navbarCollapse.classList.remove('show');
-        var toggler = document.querySelector('.navbar-toggler');
+      if (navMenu && !navMenu.classList.contains('hidden') && window.innerWidth < 992) {
+        navMenu.classList.add('hidden');
         if (toggler) {
           toggler.setAttribute('aria-expanded', 'false');
         }
