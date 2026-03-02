@@ -5,7 +5,6 @@ const header = require('gulp-header');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
-const merge = require('merge-stream');
 const pkg = require('./package.json');
 
 // Set the banner content
@@ -54,32 +53,7 @@ function copy() {
     '!**/*.map'
   ]).pipe(dest('vendor/bootstrap'));
 
-  const fontAwesome = src([
-    'node_modules/font-awesome/**',
-    '!node_modules/font-awesome/**/*.map',
-    '!node_modules/font-awesome/.npmignore',
-    '!node_modules/font-awesome/*.txt',
-    '!node_modules/font-awesome/*.md',
-    '!node_modules/font-awesome/*.json'
-  ]).pipe(dest('vendor/font-awesome'));
-
-  const devicons = src([
-    'node_modules/devicons/**/*',
-    '!node_modules/devicons/*.json',
-    '!node_modules/devicons/*.md',
-    '!node_modules/devicons/!PNG',
-    '!node_modules/devicons/!PNG/**/*',
-    '!node_modules/devicons/!SVG',
-    '!node_modules/devicons/!SVG/**/*'
-  ]).pipe(dest('vendor/devicons'));
-
-  const simpleLineIcons = src([
-    'node_modules/simple-line-icons/**/*',
-    '!node_modules/simple-line-icons/*.json',
-    '!node_modules/simple-line-icons/*.md'
-  ]).pipe(dest('vendor/simple-line-icons'));
-
-  return merge(bootstrap, fontAwesome, devicons, simpleLineIcons);
+  return bootstrap;
 }
 
 // Configure the browserSync task

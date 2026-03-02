@@ -36,7 +36,7 @@ Single-page site built with Jekyll. Content is data-driven via `_data/` YAML fil
 - **`scss/`** — SCSS source files (`_variables.scss`, `_mixins.scss`, `_global.scss`, `_nav.scss`, `_resume-item.scss`, `_bootstrap-overrides.scss`), compiled via `resume.scss`
 - **`css/`** — compiled output (`resume.css`, `resume.min.css`) — do not edit directly
 - **`js/resume.js`** — smooth scrolling (`scrollIntoView`), responsive menu toggle, scrollspy (`IntersectionObserver`) — vanilla JS, no jQuery
-- **`vendor/`** — vendored copies of Bootstrap (CSS only), Font Awesome, Devicons, Simple Line Icons
+- **`vendor/`** — vendored copy of Bootstrap (CSS only); icons via Font Awesome 6 CDN
 - **`img/`** — profile photo, favicon, project/company logos
 - **`CNAME`** — custom domain config (jeffreydinghe.com)
 
@@ -85,10 +85,10 @@ The site is ~8 years old (Start Bootstrap Resume template, 2017). The plan is to
 - Update `package.json` — clean up metadata, scripts, and dependencies
 - Stop committing built artifacts; update `.gitignore`
 
-### 5. Update Icons
-- Replace Font Awesome 4.7 with Font Awesome 6 (or a lighter alternative like Lucide/Heroicons)
-- Replace Devicons 1.x with Devicon v2 or inline SVGs
-- Remove Simple Line Icons (replace with chosen icon set)
+### ~~5. Update Icons~~ ✅ DONE
+- ~~Replace Font Awesome 4.7 with Font Awesome 6 (CDN)~~
+- ~~Remove Devicons (unused)~~
+- ~~Remove Simple Line Icons (unused)~~
 
 ### 6. SEO & Meta Tags
 - Add proper `<meta description>`, OG tags, Twitter card tags

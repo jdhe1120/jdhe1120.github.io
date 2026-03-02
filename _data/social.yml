@@ -1,12 +1,16 @@
 - label: Email
   url: "mailto:jdhe1120@gmail.com"
   fa_icon: envelope
+  fa_prefix: fas
 - label: LinkedIn
   url: "https://www.linkedin.com/in/jeffreydinghe"
   fa_icon: linkedin
+  fa_prefix: fab
 - label: GitHub
   url: "https://github.com/jdhe1120"
   fa_icon: github
+  fa_prefix: fab
 - label: YouTube
   url: "https://www.youtube.com/user/jdhe1120"
   fa_icon: youtube
+  fa_prefix: fab
