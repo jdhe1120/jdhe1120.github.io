@@ -4,16 +4,16 @@
   dates: May 2025 - Aug 2025
   bullets:
     - Received ~$8000 to work on venture over the summer
-    - Fellowship awarded to 100 students in the class
+    - <a target="_blank" href="https://www.hbs.edu/entrepreneurship/mba/rock-venture-catalyst">Rock Summer Fellowship</a> awarded to 100 students in the class
 
 - title: Product Manager 2
   company: Microsoft
   img: img/microsoft.png
   dates: Aug 2020 - April 2024
   bullets:
-    - Productized state-of-the-art algorithms by MS Research into an anomaly detection service serving 70+ teams (patented as USPTO 20240143433)
+    - 'Productized state-of-the-art algorithms by <a target="_blank" href="https://www.microsoft.com/en-us/research/">MSFT Research</a> into an anomaly detection service serving 70+ teams (patented as <a target="_blank" href="https://patents.justia.com/patent/20240143433">USPTO #20240143433</a>)'
     - Launched internal AIOps Web Portal (~70k views) to facilitate further cross-team collaborations
-    - Alumni of MAIDAP (Microsoft AI Development Acceleration Program
+    - Alumni of <a target="_blank" href="https://microsoftnewengland.com/maidap/">MAIDAP (Microsoft AI Development Acceleration Program)</a>
 
 - title: Teaching Fellow
   company: Harvard University
@@ -22,7 +22,8 @@
   bullets:
     - "Taught Machine Learning (CS181), Economics and Computation (CS136), Artificial Intelligence (CS182), Functional Programming (CS51), Intro to Computer Science (CS50)"
     - "Led weekly sections of 20 undergraduates, held office hours, designed and graded problem sets"
-    - Awarded Extraordinary Teaching in Extraordinary Times in 2020 Spring
+    - Received Award for Extraordinary Teaching in Extraordinary Times in 2020 Spring
+    - Received Bok Center Certificate of Distinction in Teaching in 2018, 2019, and 2020
 
 - title: PM Intern
   company: Microsoft
@@ -46,4 +47,5 @@
   dates: September 2017 - Present
   bullets:
     - Ran research study on 600 subjects regarding the interpretability of ML algorithms
-    - 'Published paper at <a href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19</a> ("Human Evaluation of Models Built for Interpretability")'
+    - 'Published paper at <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385"> HCI ''21: Designing AI for Trust and Collaboration in Time-Constrained Medical Decisions: A Sociotechnical Lens</a>'
+    - 'Published paper at <a target="_blank" href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19: Human Evaluation of Models Built for Interpretability</a>'
