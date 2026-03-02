@@ -1,0 +1,22 @@
+<section class="resume-section px-4 lg:px-12 flex flex-col" id="blog">
+  <div class="my-auto">
+    <h2 class="mb-12">Blog</h2>
+
+    {% if site.posts.size > 0 %}
+      <ul class="list-none p-0">
+        {% for post in site.posts %}
+        <li class="mb-6">
+          <a href="{{ post.url | relative_url }}" class="text-xl font-semibold no-underline hover:underline">{{ post.title }}</a>
+          <span class="text-sm text-body ml-2">{{ post.date | date: "%B %-d, %Y" }}</span>
+          {% if post.excerpt %}
+          <p class="mt-1 text-body">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No posts yet.</p>
+    {% endif %}
+
+  </div>
+</section>

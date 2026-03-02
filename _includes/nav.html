@@ -1,5 +1,5 @@
 <nav class="bg-primary text-white lg:flex lg:flex-col" id="sideNav">
-  <a class="navbar-brand js-scroll-trigger block p-4 lg:p-0" href="#page-top">
+  <a class="navbar-brand block p-4 lg:p-0" href="/">
     <span class="lg:hidden text-white font-heading text-xl uppercase font-bold">Menu</span>
     <span class="hidden lg:block">
       <img class="img-profile max-w-full h-auto rounded-full mx-auto mb-2" src="{{ site.profile_img | relative_url }}" alt="">
@@ -14,7 +14,11 @@
     <ul class="flex flex-col list-none p-0 w-full">
       {% for item in site.data.nav %}
       <li>
+        {% if page.page_type == 'home' %}
         <a class="nav-link js-scroll-trigger block py-2 px-4 text-white/75 hover:text-white no-underline" href="#{{ item.anchor }}">{{ item.label }}</a>
+        {% else %}
+        <a class="nav-link block py-2 px-4 text-white/75 hover:text-white no-underline" href="/#{{ item.anchor }}">{{ item.label }}</a>
+        {% endif %}
       </li>
       {% endfor %}
     </ul>

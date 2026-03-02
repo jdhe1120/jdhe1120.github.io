@@ -8,3 +8,5 @@
   anchor: education
 - label: Awards
   anchor: awards
+- label: Blog
+  anchor: blog
