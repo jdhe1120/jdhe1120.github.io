@@ -10,7 +10,6 @@ markdown: kramdown
 # Exclude dev/build files from the Jekyll site
 exclude:
   - node_modules
-  - gulpfile.js
   - package.json
   - package-lock.json
   - css/input.css

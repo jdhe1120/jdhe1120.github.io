@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal portfolio/resume website for jeffreydinghe.com, hosted via GitHub Pages. Built on the Start Bootstrap Resume template using Tailwind CSS v4. JavaScript is vanilla (no jQuery).
+Personal portfolio/resume website for jeffreydinghe.com, hosted via GitHub Pages. Built with Jekyll and Tailwind CSS v4. JavaScript is vanilla (no jQuery). Originally based on the Start Bootstrap Resume template (2017), now fully modernized.
 
 ## Build & Development
 
@@ -14,14 +14,13 @@ Requires Ruby and Bundler. After `bundle install`:
 - **`bundle exec jekyll serve`** — local dev server at `localhost:4000` with auto-regeneration
 - **`bundle exec jekyll build`** — build site to `_site/`
 
-### Tailwind CSS (styling)
+### Node.js (CSS & JS build)
 Requires Node.js. After `npm install`:
 
 - **`npm run css:build`** — compile `css/input.css` → `css/resume.min.css` (minified)
 - **`npm run css:watch`** — watch mode for development
-
-### Gulp (JS minification)
-- **`gulp minify-js`** — minify `js/resume.js` → `js/resume.min.js`
+- **`npm run js:build`** — minify `js/resume.js` → `js/resume.min.js` (via terser)
+- **`npm run build`** — run both CSS and JS builds
 
 ## Architecture
 
@@ -43,8 +42,9 @@ Single-page site built with Jekyll. Content is data-driven via `_data/` YAML fil
 - Edit styles in `css/input.css`, not `css/resume.min.css` directly. Run `npm run css:build` to recompile.
 - Site content lives in `_data/*.yml` files — edit those, not the HTML templates.
 - `_includes/sections/*.html` are Liquid templates that loop over `_data/` files.
-- After editing CSS, run `npm run css:build`. After editing JS, run `gulp minify-js`.
-- Deploys via GitHub Actions on push to `master` (builds Tailwind CSS, then `jekyll build`).
+- After editing CSS, run `npm run css:build`. After editing JS, run `npm run js:build`.
+- Built artifacts (`css/resume.min.css`, `js/resume.min.js`) are gitignored — CI builds them fresh.
+- Deploys via GitHub Actions on push to `master` (builds CSS & JS, then `jekyll build`).
 - **Manual setup required**: In repo Settings → Pages → Source, select "GitHub Actions" (not "Deploy from a branch").
 
 ## Modernization TODOs
@@ -75,13 +75,12 @@ The site is ~8 years old (Start Bootstrap Resume template, 2017). The plan is to
 - ~~Remove jQuery, jQuery Easing, Popper.js dependencies~~
 - ~~Clean up `vendor/jquery/` and `vendor/jquery-easing/` directories (dead files, can delete)~~ ✅ removed in step 2
 
-### 4. Replace Build Tooling
-- Remove Gulp 4 and all gulp-* devDependencies (already upgraded from Gulp 3)
-- Remove `gulpfile.js`
-- Let Jekyll handle the build pipeline (or add a minimal PostCSS step for Tailwind)
-- Remove IE8 compatibility targeting
-- Update `package.json` — clean up metadata, scripts, and dependencies
-- Stop committing built artifacts; update `.gitignore`
+### ~~4. Replace Build Tooling~~ ✅ DONE
+- ~~Remove Gulp 4 and all gulp-* devDependencies (already upgraded from Gulp 3)~~
+- ~~Remove `gulpfile.js`~~
+- ~~Replace with `terser` for JS minification via npm scripts~~
+- ~~Update `package.json` — clean up metadata, scripts, and dependencies~~
+- ~~Stop committing built artifacts; update `.gitignore`~~
 
 ### ~~5. Update Icons~~ ✅ DONE
 - ~~Replace Font Awesome 4.7 with Font Awesome 6 (CDN)~~
