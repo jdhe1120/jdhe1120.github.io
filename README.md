@@ -1,3 +1,19 @@
-## Welcome!
+# jeffreydinghe.com
 
-Welcome to my personal website! This repository contains the contents of jeffreydinghe.com and runs via GitHub Pages. This website's theme was adapted from the Resume Template in [Start Bootstrap](http://startbootstrap.com/), which was released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
+Personal portfolio and resume website, built with Jekyll and Tailwind CSS v4.
+
+## Prerequisites
+
+- Ruby and Bundler
+- Node.js
+
+## Local Development
+
+```sh
+bundle install
+npm install
+npm run build
+bundle exec jekyll serve
+```
+
+The site will be available at `http://localhost:4000`.
