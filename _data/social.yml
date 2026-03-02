@@ -1,5 +1,5 @@
 - label: Email
-  url: "mailto:jdhe1120@gmail.com"
+  url: "mailto:jhe@mba2026.hbs.edu"
   fa_icon: envelope
   fa_prefix: fas
 - label: LinkedIn
@@ -13,4 +13,8 @@
 - label: YouTube
   url: "https://www.youtube.com/user/jdhe1120"
   fa_icon: youtube
+  fa_prefix: fab
+- label: Substack
+  url: 
+  fa_icon: bi-substack
   fa_prefix: fab

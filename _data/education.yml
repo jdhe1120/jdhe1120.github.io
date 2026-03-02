@@ -3,20 +3,17 @@
   img: img/hbs.png
   dates: August 2024 - May 2026
   bullets:
-    - AI Club (President)
-    - Entrepreneurship Club
-    - Tech Club
-    - Education Club
-    - Healthcare Club
+    - President of AI Club
+    - Member of Entrepreneurship Club, Tech Club, Education Club, Healthcare Club
 
 - institution: Harvard University
   degree: Computer Science, AB Degree
   img: img/harvard.png
   dates: August 2016 - May 2020
   bullets:
-    - Harvard Open Data Project (President)
-    - Harvard Computer Society (Director of Education)
-    - Teaching Fellow (CS50, CS51, CS182, CS136, CS181)
-    - Harvard Data to Actionable Knowledge Lab (Researcher)
-    - Intramurals Captain (Mather House)
-    - Student Mental Health Liaisons
+    - President of Harvard Open Data Project
+    - Director of Education of Harvard Computer Society
+    - Teaching Fellow for CS50, CS51, CS182, CS136, CS181
+    - Researcher at Harvard Data to Actionable Knowledge Lab
+    - Intramurals Captain of Mather House
+    - Student Mental Health Liaison
