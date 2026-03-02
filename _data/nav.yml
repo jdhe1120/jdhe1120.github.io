@@ -1,10 +1,10 @@
 - label: Home
   anchor: page-top
+- label: Projects
+  anchor: projects
 - label: Experience
   anchor: experience
 - label: Education
   anchor: education
-- label: Projects
-  anchor: projects
 - label: Awards
   anchor: awards

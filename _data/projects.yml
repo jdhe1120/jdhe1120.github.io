@@ -1,12 +1,41 @@
 - name: Cantonese Level Up
   img: img/cantonese.png
-  dates: Feb 2026
+  dates: Feburary 2026 - Present
   links:
     - label: Github
       url: "https://github.com/jdhe1120/cantonese-level-up"
   description: |
     Cantonese Level Up is an app I built for myself to improve my ability to understand and speak Cantonese.
-    Leveraging Claude Code (primarily Opus 4.6), I've been able create a language app completely personalized to where I am today. It knows that I prefer an English UI, that I am already fluent at Mandarin, and that I can understand basic Cantonese, but can't speak.
+    Leveraging Claude Code (with Opus 4.6), I've been able customize the language app to meet me exactly where I am today. It knows that I prefer an English UI, that I am already fluent at Mandarin, and that I already know some basic Cantonese, but want to dive deeper into the intermediate level.
+
+- name: AorB Bot (PM & SWE AI Agent)
+  img: img/aorb.png
+  dates: June 2025 - December 2025
+  links:
+    - label: Demo
+      url: ""
+  description: |
+    AorB is an AI Agent I built together with my classmate that served as both a PM and a SWE for mobile app developers. AorB automatically analyzed customer app store reviews, grouped and prioritized feedback, created PRDs, created tasks on linear, and then implemented the code changes and created a PR for review.
+    To build this, we leveraged various LLMs, N8N, Linear, Github, and an open source project called Claude Hub (built on top of Claude Code).
+
+- name: HBS AI Club Bot (Email and Admin AI Agent)
+  img: img/hbs.png
+  dates: August 2025
+  links:
+    - label: Demo
+      url: ""
+  description: |
+    The HBS AI Club bot helped with handling administrative tasks including verifying membership fees were paid on Eventbrite, adding new club members to the Outlook group, and replying to member enquiries.
+    To build this, I built a Microsoft Agent Flow (HBS is on M365 and allows Outlook actions only via Microsoft tools) which leveraged a mix of LLM calls and plain old Python and regex (regular expressions).
+
+- name: WhatsApp Calendar Assistant Bot (Calendar AI Agent)
+  img: img/whatsapp.png
+  dates: November 2025
+  links:
+    - label: Demo
+      url: ""
+  description: |
+    Using Twilio, Whatsapp's API, and N8N, I created a Whatsapp number that I could text to get personal logistical tasks done, such as adding or deleting events from my calendar, summarizing my emails, etc. 
 
 - name: Harvard Open Data Project
   img: img/hodp.png
