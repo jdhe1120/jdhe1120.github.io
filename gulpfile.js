@@ -54,9 +54,6 @@ function copy() {
     '!**/*.map'
   ]).pipe(dest('vendor/bootstrap'));
 
-  const jquery = src(['node_modules/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-    .pipe(dest('vendor/jquery'));
-
   const fontAwesome = src([
     'node_modules/font-awesome/**',
     '!node_modules/font-awesome/**/*.map',
@@ -82,7 +79,7 @@ function copy() {
     '!node_modules/simple-line-icons/*.md'
   ]).pipe(dest('vendor/simple-line-icons'));
 
-  return merge(bootstrap, jquery, fontAwesome, devicons, simpleLineIcons);
+  return merge(bootstrap, fontAwesome, devicons, simpleLineIcons);
 }
 
 // Configure the browserSync task

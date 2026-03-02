@@ -1,28 +1,57 @@
-(function($) {
-  "use strict"; // Start of use strict
+(function() {
+  'use strict';
 
-  // Smooth scrolling using jQuery easing
-  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      if (target.length) {
-        $('html, body').animate({
-          scrollTop: (target.offset().top)
-        }, 1000, "easeInOutExpo");
-        return false;
+  // Smooth scrolling for nav links
+  document.querySelectorAll('a.js-scroll-trigger[href*="#"]:not([href="#"])').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
+          location.hostname === this.hostname) {
+        var target = document.querySelector(this.hash);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
       }
-    }
+    });
   });
 
-  // Closes responsive menu when a scroll trigger link is clicked
-  $('.js-scroll-trigger').click(function() {
-    $('.navbar-collapse').collapse('hide');
+  // Close responsive menu when a scroll trigger link is clicked
+  document.querySelectorAll('.js-scroll-trigger').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var navbarCollapse = document.querySelector('.navbar-collapse');
+      if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+        navbarCollapse.classList.remove('show');
+        var toggler = document.querySelector('.navbar-toggler');
+        if (toggler) {
+          toggler.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
   });
 
-  // Activate scrollspy to add active class to navbar items on scroll
-  $('body').scrollspy({
-    target: '#sideNav'
-  });
+  // Scrollspy using Intersection Observer
+  var sections = document.querySelectorAll('section.resume-section');
+  var navLinks = document.querySelectorAll('#sideNav .js-scroll-trigger');
 
-})(jQuery); // End of use strict
+  if (sections.length && navLinks.length) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -80% 0px'
+    });
+
+    sections.forEach(function(section) {
+      observer.observe(section);
+    });
+  }
+
+})();
