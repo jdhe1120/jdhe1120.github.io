@@ -87,40 +87,23 @@ The site is ~8 years old (Start Bootstrap Resume template, 2017). The plan is to
 - ~~Remove Devicons (unused)~~
 - ~~Remove Simple Line Icons (unused)~~
 
-### 6. SEO & Meta Tags
-- Add proper `<meta description>`, OG tags, Twitter card tags
-- Add `lang="en"` to `<html>` element
-- Add structured data (JSON-LD Person schema)
-- Generate `sitemap.xml` (Jekyll has a plugin for this)
-- Add `robots.txt`
-- Add canonical URLs
+### ~~7. Accessibility~~ ✅ DONE
+- ~~Add skip-to-content link~~
+- ~~Add ARIA labels to navigation and interactive elements~~
+- ~~Fix semantic HTML (replace `<br>` spacing with CSS margins)~~
+- ~~Ensure proper heading hierarchy~~
+- ~~Add meaningful alt text to all images~~
+- ~~Test keyboard navigation end-to-end~~
 
-### 7. Accessibility
-- Add skip-to-content link
-- Add ARIA labels to navigation and interactive elements
-- Fix semantic HTML (replace `<br>` spacing with CSS margins)
-- Ensure proper heading hierarchy
-- Add meaningful alt text to all images
-- Test keyboard navigation end-to-end
+### 9. Blog Infrastructure (partially done)
+- ~~Set up Jekyll `_posts/` directory with Markdown support~~ ✅
+- ~~Create blog index page and post layout template~~ ✅
+- ~~Add RSS/Atom feed (`jekyll-feed` plugin)~~ ✅
+- ~~Add syntax highlighting for code blocks (`rouge`, built into Jekyll)~~ ✅
+- Add tags/categories support (skipped for now)
+- Add pagination for blog listing (skipped for now)
 
-### 8. Performance
-- Self-host Google Fonts (or use `font-display: swap`)
-- Convert images to WebP/AVIF with fallbacks
-- Add lazy loading for below-fold images
-- Add resource hints (`preconnect`, `preload` for critical assets)
-- Minimize JS payload (target zero or near-zero JS)
-
-### 9. Blog Infrastructure
-- Set up Jekyll `_posts/` directory with Markdown support
-- Create blog index page and post layout template
-- Add RSS/Atom feed (`jekyll-feed` plugin)
-- Add syntax highlighting for code blocks (`rouge`, built into Jekyll)
-- Add tags/categories support
-- Add pagination for blog listing
-
-### 10. Developer Experience
-- Add GitHub Actions workflow for CI (build validation on PRs)
-- Add Prettier for formatting
-- Add a proper `.gitignore` (node_modules, _site, .jekyll-cache)
-- Add a `README.md` with local dev setup instructions
-- Update `CLAUDE.md` to reflect the new Jekyll + Tailwind stack
+### ~~10. Developer Experience~~ ✅ DONE
+- ~~Add a proper `.gitignore` (node_modules, _site, .jekyll-cache)~~
+- ~~Add a `README.md` with local dev setup instructions~~
+- ~~Update `CLAUDE.md` to reflect the new Jekyll + Tailwind stack~~

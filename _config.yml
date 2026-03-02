@@ -6,6 +6,9 @@ url: "https://jeffreydinghe.com"
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
 plugins:
   - jekyll-feed
 

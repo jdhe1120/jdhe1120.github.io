@@ -304,6 +304,102 @@
     font-size: 0.875em;
   }
 
+  /* Rouge syntax highlighting — GitHub-style theme */
+  .highlight .c,
+  .highlight .c1,
+  .highlight .cm,
+  .highlight .cs {
+    color: #6a737d;
+    font-style: italic;
+  }
+  .highlight .k,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt {
+    color: #d73a49;
+  }
+  .highlight .s,
+  .highlight .s1,
+  .highlight .s2,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .sh,
+  .highlight .sx {
+    color: #032f62;
+  }
+  .highlight .si,
+  .highlight .se {
+    color: #032f62;
+  }
+  .highlight .na {
+    color: #6f42c1;
+  }
+  .highlight .nb,
+  .highlight .bp {
+    color: #005cc5;
+  }
+  .highlight .nc,
+  .highlight .no {
+    color: #6f42c1;
+  }
+  .highlight .nd {
+    color: #6f42c1;
+  }
+  .highlight .nf,
+  .highlight .nx {
+    color: #6f42c1;
+  }
+  .highlight .ni {
+    color: #24292e;
+  }
+  .highlight .nl {
+    color: #005cc5;
+  }
+  .highlight .nn {
+    color: #24292e;
+  }
+  .highlight .nt {
+    color: #22863a;
+  }
+  .highlight .nv,
+  .highlight .vi,
+  .highlight .vc,
+  .highlight .vg,
+  .highlight .vs {
+    color: #e36209;
+  }
+  .highlight .o,
+  .highlight .ow {
+    color: #d73a49;
+  }
+  .highlight .m,
+  .highlight .mi,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mo {
+    color: #005cc5;
+  }
+  .highlight .sr {
+    color: #032f62;
+  }
+  .highlight .ss {
+    color: #005cc5;
+  }
+  .highlight .err {
+    color: #cb2431;
+  }
+  .highlight .gd {
+    color: #cb2431;
+    background-color: #ffeef0;
+  }
+  .highlight .gi {
+    color: #22863a;
+    background-color: #f0fff4;
+  }
+
   .prose img {
     max-width: 100%;
     height: auto;
