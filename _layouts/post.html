@@ -1,0 +1,16 @@
+---
+layout: default
+page_type: post
+---
+<div class="w-full p-0">
+  <section class="resume-section p-3 p-lg-5">
+    <h2 class="mb-2">{{ page.title }}</h2>
+    <p class="text-sm text-body mb-8">{{ page.date | date: "%B %-d, %Y" }}</p>
+    <div class="prose">
+      {{ content }}
+    </div>
+    <p class="mt-8">
+      <a href="{{ '/blog/' | relative_url }}" class="text-primary font-semibold no-underline hover:underline">&larr; Back to all posts</a>
+    </p>
+  </section>
+</div>

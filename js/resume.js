@@ -26,8 +26,8 @@
     });
   });
 
-  // Close responsive menu when a scroll trigger link is clicked
-  document.querySelectorAll('.js-scroll-trigger').forEach(function(link) {
+  // Close responsive menu when a nav link is clicked
+  document.querySelectorAll('#sideNav .nav-link').forEach(function(link) {
     link.addEventListener('click', function() {
       if (navMenu && !navMenu.classList.contains('hidden') && window.innerWidth < 992) {
         navMenu.classList.add('hidden');

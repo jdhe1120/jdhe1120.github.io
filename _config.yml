@@ -6,6 +6,19 @@ url: "https://jeffreydinghe.com"
 
 # Build settings
 markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# Blog post permalink structure
+permalink: /blog/:year/:month/:day/:title/
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
 
 # Exclude dev/build files from the Jekyll site
 exclude:
@@ -14,7 +27,6 @@ exclude:
   - package-lock.json
   - css/input.css
   - CLAUDE.md
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - "*.md"
-  - "!index.md"

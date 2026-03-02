@@ -3,6 +3,8 @@
 @source "../_layouts";
 @source "../_includes";
 @source "../index.html";
+@source "../blog";
+@source "../_posts";
 
 @theme {
   --color-primary: #8d0e31;
@@ -208,5 +210,83 @@
 
   .list-social-icons .fa-lg {
     font-size: 1.75rem;
+  }
+
+  /* Blog prose styles */
+  .prose {
+    max-width: 65ch;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-heading);
+  }
+
+  .prose p {
+    margin-bottom: 1.25em;
+  }
+
+  .prose h2 {
+    font-size: 1.75rem;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+  }
+
+  .prose h3 {
+    font-size: 1.35rem;
+    margin-top: 1.75em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose ul, .prose ol {
+    margin-bottom: 1.25em;
+    padding-left: 1.5em;
+  }
+
+  .prose ul {
+    list-style-type: disc;
+  }
+
+  .prose ol {
+    list-style-type: decimal;
+  }
+
+  .prose li {
+    margin-bottom: 0.25em;
+  }
+
+  .prose blockquote {
+    border-left: 4px solid var(--color-primary);
+    padding-left: 1em;
+    margin-left: 0;
+    margin-bottom: 1.25em;
+    color: var(--color-body);
+    font-style: italic;
+  }
+
+  .prose pre {
+    background: #f6f8fa;
+    border-radius: 0.375rem;
+    padding: 1em;
+    overflow-x: auto;
+    margin-bottom: 1.25em;
+  }
+
+  .prose code {
+    font-size: 0.875em;
+  }
+
+  .prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.375rem;
+    margin-bottom: 1.25em;
+  }
+
+  .prose a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: var(--color-primary-dark);
   }
 }

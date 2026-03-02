@@ -5,7 +5,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {% feed_meta %}
 
   <!-- Custom fonts -->
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
