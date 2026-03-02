@@ -5,9 +5,13 @@
 
   <body id="page-top">
 
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     {% include nav.html %}
 
-    {{ content }}
+    <main id="main-content">
+      {{ content }}
+    </main>
 
     <!-- Custom scripts for this template -->
     <script src="{{ 'js/resume.min.js' | relative_url }}"></script>

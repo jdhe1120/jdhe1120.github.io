@@ -10,7 +10,7 @@
     <ul class="list-social-icons flex flex-wrap list-none p-0 mb-0">
       {% for social in site.data.social %}
       <li class="mr-2">
-        <a href="{{ social.url }}">
+        <a href="{{ social.url }}" aria-label="{{ social.label }}">
           <span class="fa-stack fa-lg">
             <i class="fas fa-circle fa-stack-2x"></i>
             <i class="{{ social.fa_prefix }} fa-{{ social.fa_icon }} fa-stack-1x fa-inverse"></i>

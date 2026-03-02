@@ -1,6 +1,7 @@
 - title: Rock Summer Fellow at Rock Center for Entrepreneurship
   company: Harvard Business School
   img: img/hbs.png
+  alt: Harvard Business School logo
   dates: May 2025 - Aug 2025
   bullets:
     - Received ~$8000 to work on venture over the summer
@@ -9,6 +10,7 @@
 - title: Product Manager 2
   company: Microsoft
   img: img/microsoft.png
+  alt: Microsoft logo
   dates: Aug 2020 - April 2024
   bullets:
     - 'Productized state-of-the-art algorithms by <a target="_blank" href="https://www.microsoft.com/en-us/research/">MSFT Research</a> into an anomaly detection service serving 70+ teams (patented as <a target="_blank" href="https://patents.justia.com/patent/20240143433">USPTO #20240143433</a>)'
@@ -18,6 +20,7 @@
 - title: Teaching Fellow
   company: Harvard University
   img: img/harvard.png
+  alt: Harvard University logo
   dates: August 2017 - May 2020
   bullets:
     - "Taught Machine Learning (CS181), Economics and Computation (CS136), Artificial Intelligence (CS182), Functional Programming (CS51), Intro to Computer Science (CS50)"
@@ -28,6 +31,7 @@
 - title: PM Intern
   company: Microsoft
   img: img/microsoft.png
+  alt: Microsoft logo
   dates: May 2019 - August 2019
   bullets:
     - "Researched, designed, and implemented a new workflow to improve the monthly support case review process (500 cases/month) for the Azure Stack team"
@@ -36,6 +40,7 @@
 - title: Explorer Intern
   company: Microsoft
   img: img/microsoft.png
+  alt: Microsoft logo
   dates: May 2018 - August 2018
   bullets:
     - "Built a new Microsoft Store feature (using Angular, Typescript, C#, and Jasmine) that provides publishers a detailed history of their product submissions broken down by category"
@@ -44,6 +49,7 @@
 - title: Undergraduate Researcher
   company: Harvard Data to Actionable Knowledge Lab
   img: img/harvard-seas.jpeg
+  alt: Harvard SEAS logo
   dates: September 2017 - Present
   bullets:
     - Ran research study on 600 subjects regarding the interpretability of ML algorithms

@@ -1,5 +1,6 @@
 - name: Cantonese Level Up
   img: img/cantonese.png
+  alt: Cantonese Level Up logo
   dates: Feburary 2026 - Present
   links:
     - label: Github
@@ -10,6 +11,7 @@
 
 - name: AorB Bot (PM & SWE AI Agent)
   img: img/aorb.png
+  alt: AorB Bot logo
   dates: June 2025 - December 2025
   links:
     - label: Demo
@@ -20,6 +22,7 @@
 
 - name: HBS AI Club Bot (Email and Admin AI Agent)
   img: img/hbs.png
+  alt: Harvard Business School logo
   dates: August 2025
   links:
     - label: Demo
@@ -30,6 +33,7 @@
 
 - name: WhatsApp Calendar Assistant Bot (Calendar AI Agent)
   img: img/whatsapp.png
+  alt: WhatsApp logo
   dates: November 2025
   links:
     - label: Demo
@@ -39,6 +43,7 @@
 
 - name: Harvard Open Data Project
   img: img/hodp.png
+  alt: Harvard Open Data Project logo
   dates: January 2017 - May 2020
   links:
     - label: Website
@@ -52,6 +57,7 @@
 
 - name: Facebook Message Analyzer
   img: img/fb.png
+  alt: Facebook logo
   dates: September 2018
   links:
     - label: GitHub
@@ -61,6 +67,7 @@
 
 - name: Datamatch
   img: img/datamatch.png
+  alt: Datamatch logo
   dates: September 2016 - May 2018
   links:
     - label: Website
@@ -72,6 +79,7 @@
 
 - name: ProPublica Non-Profit Scraper
   img: img/propublica.png
+  alt: ProPublica logo
   dates: December 2016
   links:
     - label: GitHub

@@ -1,6 +1,7 @@
 - institution: Harvard Business School
   degree: MBA Degree
   img: img/hbs.png
+  alt: Harvard Business School logo
   dates: August 2024 - May 2026
   bullets:
     - President of AI Club (held several Technical Learning Workshops for hundreds of students)
@@ -9,6 +10,7 @@
 - institution: Harvard University
   degree: Computer Science, AB Degree
   img: img/harvard.png
+  alt: Harvard University logo
   dates: August 2016 - May 2020
   bullets:
     - President of Harvard Open Data Project

@@ -6,7 +6,7 @@
     <div class="resume-item flex flex-col md:flex-row mb-6">
       <div class="mr-auto">
         <div class="resume-header gap-3">
-          <img class="resume-img" src="{{ award.img | relative_url }}" alt="">
+          <img class="resume-img" src="{{ award.img | relative_url }}" alt="{{ award.alt }}">
           <div>
             <h3 class="mb-0">{{ award.title }}</h3>
             <div class="subheading">{{ award.subtitle }}</div>
