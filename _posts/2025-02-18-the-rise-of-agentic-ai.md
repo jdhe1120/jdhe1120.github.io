@@ -1,8 +1,8 @@
 ---
-title: "The Rise of Agentic AI"
+title: "[HBS AI Club] The Rise of Agentic AI"
 ---
 
-*This post is based on a Technical Learning Session I gave for the AI Club in February 2025 on the Rise of Agentic AI.*
+*This post is based on a Technical Learning Session I gave for the HBS AI Club in February 2025 on the Rise of Agentic AI.*
 
 The term "agentic" has gotten a lot of hype recently, and I think a lot of people have wanted to better undersatnd what it really means. In reinforcement learning, the word "agent" has been around for a while, but it's now been repurposed in this LLM wave to mean something new. The goal of this the talk I presented to the HBS AI Club wasn't to explain everything, but rather to give enough context so that students can keep learning on their own!
 
