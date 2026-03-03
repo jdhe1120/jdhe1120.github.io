@@ -10,4 +10,7 @@ In Azure's cloud infrastructure, hardware failures are inevitable at scale — t
 
 Since running in production, Narya has reduced virtual machine interruptions by 26% on average compared to the previous static approach — a meaningful improvement for the millions of VMs running on Azure.
 
+![Narya feedback loop: hardware failure prediction feeds into smart decision-making, which selects an action, measures customer impact, and feeds back](/img/blog/narya/narya-feedback-loop.png)
+*Figure 1: Narya starts with a hardware failure prediction, makes a smart decision on how to respond, implements the response, then measures the customer impact and incorporates it via a feedback loop.*
+
 The full technical details are in the [OSDI 2020 paper](https://www.usenix.org/conference/osdi20/presentation/levy). To read the full blog post, [see the Azure Blog &rarr;](https://azure.microsoft.com/en-us/blog/advancing-failure-prediction-and-mitigation-introducing-narya/)

@@ -52,6 +52,6 @@
   alt: Harvard SEAS logo
   dates: September 2017 - Present
   bullets:
-    - Ran research study on 600 subjects regarding the interpretability of ML algorithms
+    - 'Ran research study on 600 subjects regarding the interpretability of ML algorithms with <a target="_blank" href="https://finale.seas.harvard.edu/">Prof. Finale Doshi-Velez</a>'
     - 'Published paper at <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385"> HCI ''21: Designing AI for Trust and Collaboration in Time-Constrained Medical Decisions: A Sociotechnical Lens</a>'
     - 'Published paper at <a target="_blank" href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19: Human Evaluation of Models Built for Interpretability</a>'

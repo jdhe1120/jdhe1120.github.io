@@ -2,7 +2,7 @@
 title: "[MSFT] Advancing Anomaly Detection with AIOps — Introducing AiDice"
 ---
 
-*This blog post was originally published on the [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/), which I co-authored with Azure CTO Mark Russinovich.*
+*This blog post was originally published on the <a target="_blank" href="https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/">Microsoft Azure Blog</a>, which I co-authored with Azure CTO Mark Russinovich.*
 
 At Azure, we use AIOps to continuously monitor health metrics across our cloud infrastructure. A key challenge my team worked on was detecting anomalies in large-scale, multi-dimensional time series data — where each component logs data across dozens of attributes like hardware type, OS version, and datacenter region, creating an exponential number of individual time series to monitor.
 
@@ -16,4 +16,4 @@ In one real-world case, we applied AiDice to monitor low memory events across mo
 
 ![AiDice localizes the anomaly to a specific pivot — a clear upward trend hidden in the aggregate](/img/blog/aidice-localized-trend.png)
 
-The full technical details are in the [ESEC/FSE 2020 paper](https://dl.acm.org/doi/10.1145/3368089.3417060). To read the full blog post, [see the Azure Blog &rarr;](https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/)
+The full technical details are in the <a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3368089.3409741">ESEC/FSE 2020 paper</a>. To read the full blog post, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/">see the Azure Blog &rarr;</a>
