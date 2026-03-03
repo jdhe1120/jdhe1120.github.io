@@ -1,5 +1,5 @@
 ---
-title: "Advancing Anomaly Detection with AIOps — Introducing AiDice"
+title: "[MSFT] Advancing Anomaly Detection with AIOps — Introducing AiDice"
 ---
 
 *This blog post was originally published on the [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/), which I co-authored with Azure CTO Mark Russinovich.*
