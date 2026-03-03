@@ -56,7 +56,7 @@ I think it boils down to two reasons.
 
 ## The Agentic AI Stack
 
-Next, let's cover teh Agentic AI STack. There's a lot to digest here, so let me break it down layer by layer:
+Next, let's cover the Agentic AI STack. There's a lot to digest here, so let me break it down layer by layer:
 
 ![AI Agents Stack](/img/blog/the-rise-of-agentic-ai/agentic-ai-stack.png)
 
