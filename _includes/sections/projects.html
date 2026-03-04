@@ -10,7 +10,7 @@
           <div>
             <h3 class="mb-0">{{ project.name }}</h3>
             <div class="subheading mb-4">
-              {% for link in project.links %}{% if forloop.index > 1 %} &middot; {% endif %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+              {% for link in project.links %}{% if forloop.index > 1 %} &middot; {% endif %}<a target="_blank" href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
             </div>
           </div>
         </div>

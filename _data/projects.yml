@@ -7,39 +7,39 @@
       url: "https://github.com/jdhe1120/cantonese-level-up"
   description: |
     Cantonese Level Up is an app I built for myself to improve my ability to understand and speak Cantonese.
-    Leveraging Claude Code (with Opus 4.6), I've been able customize the language app to meet me exactly where I am today. It knows that I prefer an English UI, that I am already fluent at Mandarin, and that I already know some basic Cantonese, but want to dive deeper into the intermediate level.
+    Leveraging Claude Code (with Opus 4.6), I've been able customize the language app to meet me exactly where I am today. It knows that I prefer an English UI, that I am already fluent at Mandarin, and that I already understand some basic Cantonese, but that I want reach a more intermediate level.
 
 - name: AorB Bot (PM & SWE AI Agent)
   img: img/aorb.png
   alt: AorB Bot logo
   dates: June 2025 - December 2025
   links:
-    - label: Demo
-      url: ""
+    - label: Demo VIdeo
+      url: "https://youtu.be/0nBPjAvFC8Q"
   description: |
-    AorB is an AI Agent I built together with my classmate that served as both a PM and a SWE for mobile app developers. AorB automatically analyzed customer app store reviews, grouped and prioritized feedback, created PRDs, created tasks on linear, and then implemented the code changes and created a PR for review.
-    To build this, we leveraged various LLMs, N8N, Linear, Github, and an open source project called Claude Hub (built on top of Claude Code).
+    AorB is an AI Agent that serves as both a PM and a SWE for mobile app publishers. AorB automatically analyzes app store reviews, groupes and prioritizes feedback, creates PRDs, creates tasks on Linear, and implements the code changes along with a PR for review.
+    I worked together with a classmate to build this, leveraging various LLMs, N8N, Linear, Github, and an open source project called Claude Hub (built on top of Claude Code).
 
-- name: HBS AI Club Bot (Email and Admin AI Agent)
-  img: img/hbs.png
-  alt: Harvard Business School logo
-  dates: August 2025
-  links:
-    - label: Demo
-      url: ""
-  description: |
-    The HBS AI Club bot helped with handling administrative tasks including verifying membership fees were paid on Eventbrite, adding new club members to the Outlook group, and replying to member enquiries.
-    To build this, I built a Microsoft Agent Flow (HBS is on M365 and allows Outlook actions only via Microsoft tools) which leveraged a mix of LLM calls and plain old Python and regex (regular expressions).
-
-- name: WhatsApp Calendar Assistant Bot (Calendar AI Agent)
+- name: WhatsApp Personal Assistant Bot (Calendar AI Agent)
   img: img/whatsapp.png
   alt: WhatsApp logo
   dates: November 2025
   links:
-    - label: Demo
+    - label: Blog Walkthrough
+      url: "/blog/2025/11/11/how-to-create-a-whatsapp-assistant-bot-using-n8n-twilio-and-whatsapps-api/"
+  description: |
+    Using Twilio, Whatsapp, N8N, and Claude Sonnet 4, I created a Whatsapp bot that I can text to get personal logistical tasks done, such as managing my Google Calendar. View my blog post for a beginner-friendly walkthrough of how to set one up yourself!
+
+- name: HBS AI Club Bot (Admin AI Agent)
+  img: img/hbs.png
+  alt: Harvard Business School logo
+  dates: August 2025
+  links:
+    - label: Blog Walkthrough (coming soon)
       url: ""
   description: |
-    Using Twilio, Whatsapp's API, and N8N, I created a Whatsapp number that I could text to get personal logistical tasks done, such as adding or deleting events from my calendar, summarizing my emails, etc. 
+    The HBS AI Club bot helped with handling administrative tasks including verifying membership fees were paid on Eventbrite, adding new club members to the Outlook group, and replying to member enquiries.
+    I built this using a Microsoft Agent Flow (since HBS is on M365 and restricts us from calling the Outlook APIs from anything other than included Microsoft tools). Similar to N8N, the workflow leveraged a mix of LLM calls and plain old Python and regex (regular expressions) to handle the tasks.
 
 - name: Harvard Open Data Project
   img: img/hodp.png
