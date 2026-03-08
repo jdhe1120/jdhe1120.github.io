@@ -8,7 +8,7 @@
         <div class="resume-header gap-3">
           <img class="resume-img" src="{{ award.img | relative_url }}" alt="{{ award.alt }}">
           <div>
-            <h3 class="mb-0">{{ award.title }}</h3>
+            <h3 class="mb-0">{{ award.title }}{% if award.link and award.link_text %} (<a href="{{ award.link }}" target="_blank" rel="noopener noreferrer">{{ award.link_text }}</a>){% endif %}</h3>
             <div class="subheading">{{ award.subtitle }}</div>
           </div>
         </div>

@@ -1,8 +1,10 @@
-- title: Patent on Anomaly Detection (PTO 20240143433)
+- title: Patent on Anomaly Detection
+  link_text: PTO 12189466
   subtitle: Awarded Patent on Detecting Systemwide Service Issues by Using Anomaly Localization
   img: img/microsoft.png
   alt: Microsoft logo
   date: May 2024
+  link: https://patents.justia.com/patent/12189466
 
 - title: November 2022 MLADS Conference Presenter
   subtitle: Selected to present at annual Machine Learning, AI, & Data Science (MLADS) Conference
