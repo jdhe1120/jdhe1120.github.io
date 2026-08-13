@@ -1,0 +1,17 @@
+{
+  "name": "jdhe1120.github.io",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for jeffreydinghe.com",
+  "private": true,
+  "scripts": {
+    "css:build": "npx @tailwindcss/cli -i ./css/input.css -o ./css/resume.min.css --minify",
+    "css:watch": "npx @tailwindcss/cli -i ./css/input.css -o ./css/resume.min.css --watch",
+    "js:build": "terser js/resume.js -o js/resume.min.js --compress --mangle",
+    "build": "npm run css:build && npm run js:build"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "tailwindcss": "^4.2.1",
+    "terser": "^5.37.0"
+  }
+}
