@@ -1,0 +1,8 @@
+- label: About
+  anchor: about
+- label: Projects
+  anchor: projects
+- label: Background
+  anchor: background
+- label: Blog
+  href: /blog/

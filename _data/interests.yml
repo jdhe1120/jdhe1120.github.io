@@ -1,0 +1,55 @@
+# Places render as a uniform map pin + label + emoji (see about.html).
+# Drawn landmark icons were tried and dropped, five thin towers were
+# indistinguishable from one another at display size.
+#   home: true     -> house pin instead of a map pin (somewhere that is home)
+#   current: true  -> house pin PLUS accent styling + chip (where I live now).
+#                     Only one place should be current; the highlight is what
+#                     separates it from the other homes.
+#   emoji          -> trailing mark; emoji_label is its screen-reader text
+#
+# Order is reverse-chronological: where I am now first, back to where I started.
+#
+# Note on emoji choices: avoided 🗻 (literally MOUNT FUJI in Unicode) for
+# Seattle and 🏯 (JAPANESE CASTLE) for Shanghai, both would read as errors.
+# All emoji used here render in colour on Windows via Segoe UI Emoji; only
+# flag emoji (🇯🇵/🇭🇰) break there, so none are used.
+- label: San Francisco
+  group: Places
+  current: true
+  emoji: "🌉"
+  emoji_label: Golden Gate Bridge
+- label: Seattle
+  group: Places
+  emoji: "🏔️"
+  emoji_label: Mount Rainier
+- label: Boston
+  group: Places
+  emoji: "🦞"
+  emoji_label: Lobster
+- label: Shanghai
+  group: Places
+  home: true
+  # Oriental Pearl Tower, no Unicode emoji exists for it
+  mark: img/shanghai-tower.png
+  mark_label: Oriental Pearl Tower
+  mark_tall: true
+- label: Hong Kong
+  group: Places
+  home: true
+  # image rather than an emoji flag: 🇭🇰 renders as an "HK" letter box on Windows
+  mark: img/hongkong-emoji.png
+  mark_label: Hong Kong flag
+- label: Tokyo
+  group: Places
+  emoji: "🗼"
+  emoji_label: Tokyo Tower
+- label: LA Clippers
+  img: img/clippers.png
+  alt: LA Clippers logo
+  sport: basketball
+  group: Teams
+- label: Hull City
+  img: img/hull-city.png
+  alt: Hull City A.F.C. crest
+  sport: football
+  group: Teams

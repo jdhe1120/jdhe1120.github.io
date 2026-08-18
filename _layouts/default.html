@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+{% include head.html %}
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include nav.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <ul class="site-footer__social">
+        {% for link in site.data.social %}
+        <li>
+          <a href="{{ link.url }}" aria-label="{{ link.label }}" target="_blank" rel="noopener">
+            <i class="{{ link.fa_prefix }} fa-{{ link.fa_icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <p>&copy; {{ site.time | date: '%Y' }} Jeffrey Ding He</p>
+    </div>
+  </footer>
+  <script src="{{ '/js/resume.min.js' | relative_url }}"></script>
+</body>
+</html>

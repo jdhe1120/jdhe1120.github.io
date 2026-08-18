@@ -1,0 +1,33 @@
+title: Jeffrey Ding He
+email: jdhe1120@gmail.com
+description: >-
+  Product manager and builder. Ex-Microsoft, currently an MBA at HBS.
+tagline: Product Manager & Builder
+credentials: HBS '26 | Harvard CS '20 | Former MSFT PM
+intro: I love teaching, music, and learning new languages.
+url: "https://jeffreydinghe.com"
+
+markdown: kramdown
+highlighter: rouge
+# matches the live site's existing URLs; changing this breaks every published link
+permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - css/input.css

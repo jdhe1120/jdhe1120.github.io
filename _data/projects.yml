@@ -1,0 +1,75 @@
+- name: Cantonese Level Up
+  subtitle: A language app that meets you where you already are
+  img: img/cantonese.png
+  alt: Cantonese Level Up logo
+  dates: Feb 2026 – Present
+  featured: true
+  links:
+    - label: GitHub
+      url: "https://github.com/jdhe1120/cantonese-level-up"
+  description: |
+    Most language apps let you pick from pre-set levels, but those levels are either too easy or too hard. In my case, I can understand spoken Cantonese and read traditional characters, but I'm weak on speaking. That forced me to start from zero, where I wasted hours on apps that assumed I couldn't read. So I built my own.
+
+    Cantonese Level Up lets you define where you already are and builds lessons around it. I built a feature that allows you to drop a YouTube link and get a live lesson with Jyutping, written Chinese, and English, then convert what you learned into flashcards, quizzes, and pronunciation practice. Started this as a tool just for myself, but now friends use it too.
+
+- name: AorB Bot
+  subtitle: PM and Coding AI Agent
+  img: img/aorb.png
+  alt: AorB Bot logo
+  dates: Aug 2025 – Dec 2025
+  links:
+    - label: Demo
+      url: "https://youtu.be/0nBPjAvFC8Q"
+  description: |
+    Built for mobile app publishers: reads app-store reviews, groups and prioritizes feedback, writes the PRD, files tasks in Linear, then writes the code and opens the PR. Runs on N8N, GitHub, and Claude Code.
+
+- name: Neurosurgery Intake Assistant
+  subtitle: AI patient intake tool piloted with Mass General Brigham
+  img: img/health-agent.png
+  alt: Neurosurgery Intake Assistant icon
+  dates: Jun 2025 – Nov 2025
+  description: |
+    Selected as an <a target="_blank" href="https://www.hbs.edu/entrepreneurship/mba/rock-venture-catalyst">HBS Rock Summer Fellow</a> (a Harvard entrepreneurship fellowship) for an AI patient-doctor matching concept; pivoted to clinical intake with neurosurgeons at Mass General Brigham, piloted with patients. Recognized as a Harvard iLab Venture.
+
+- name: Harvard Open Data Project
+  subtitle: Harvard's first open data catalog
+  img: img/hodp.png
+  alt: Harvard Open Data Project logo
+  dates: Jan 2017 – May 2020
+  links:
+    - label: Website
+      url: "https://www.hudp.org/"
+    - label: GitHub
+      url: "https://github.com/Harvard-Open-Data-Project/harvard-open-data-project.github.io"
+    - label: Media
+      url: "https://www.thecrimson.com/article/2018/11/15/2018-open-data-project-uc/"
+  description: |
+    Co-founded the HODP student organization around an existing project, served as President. As a group, our mission is to use public Harvard data to increase transparency and tackle issues on campus, and it still runs <a target="_blank" href="https://www.hudp.org/">today</a>. Used data science to dig into: <a target="_blank" href="https://medium.com/harvard-open-data-project/literally-nobody-voted-in-the-quincy-midterm-elections-409bf19a59cf">student election turnout</a>, <a target="_blank" href="https://medium.com/harvard-open-data-project/gender-disparity-in-harvard-faculty-b253ae949a56">faculty gender disparity</a>, <a target="_blank" href="https://medium.com/harvard-open-data-project/from-ec-to-tech-how-harvard-students-are-changing-concentrations-b748b55ed35b">concentration trends</a>.
+
+- name: Datamatch
+  subtitle: Matchmaking service for ~4,000 students a year
+  img: img/datamatch.png
+  alt: Datamatch logo
+  dates: Sep 2016 – May 2018
+  links:
+    - label: Website
+      url: "https://datamatch.me/"
+    - label: Media
+      url: "https://www.thecrimson.com/article/2019/2/15/thousands-seek-datamatch-food/"
+  description: |
+    A Valentine's Day tradition pairing thousands of Harvard students via survey, with mutual matches getting free meals from local Cambridge businesses. Built with Ruby on Rails and React. As web lead, I ran the team that designed the credits and archives pages.
+
+- name: Violin YouTube Channel
+  subtitle: 1.5M+ views on violin covers
+  img: img/youtube.jpg
+  alt: Violin cover video thumbnails
+  dates: May 2011 – Jan 2016
+  links:
+    - label: Channel
+      url: "https://www.youtube.com/user/jdhe1120"
+    - label: The Force Theme (Star Wars)
+      url: "https://www.youtube.com/watch?v=j6K89gumQ2M"
+    - label: Media
+      url: "https://www.today.com/popculture/high-school-violinist-wows-lightsaber-rendition-star-wars-theme-song-t69376"
+  description: |
+    Recorded and posted violin covers of favorite songs and pieces. Accepted into the YouTube Partner Program, monetizing the channel.

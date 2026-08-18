@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="100" fill="#16140f"/>
+  <g stroke="#a2401a" fill="none" stroke-width="6" stroke-linecap="round">
+    <!-- mast -->
+    <path d="M100 44 L100 66"/>
+    <!-- saucer: wide flattened disc -->
+    <path d="M62 78 Q100 58 138 78 Q100 96 62 78 Z" fill="#a2401a" stroke="none"/>
+    <!-- underside taper -->
+    <path d="M74 86 Q100 100 126 86"/>
+    <!-- three legs splaying to the base -->
+    <path d="M88 92 Q80 130 70 160"/>
+    <path d="M100 94 L100 160"/>
+    <path d="M112 92 Q120 130 130 160"/>
+    <!-- waist tie -->
+    <path d="M84 120 Q100 128 116 120"/>
+    <!-- ground -->
+    <path d="M52 164 L148 164" stroke-width="7"/>
+  </g>
+</svg>

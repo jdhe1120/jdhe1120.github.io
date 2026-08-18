@@ -1,0 +1,25 @@
+<section id="projects" class="section">
+  <h2 class="section__heading">Projects</h2>
+  <div class="project-grid">
+    {% for project in site.data.projects %}
+    <article class="project-card{% if project.featured %} project-card--featured{% endif %}">
+      <div class="project-card__top">
+        <img class="project-card__logo" src="/{{ project.img }}" alt="{{ project.alt }}" loading="lazy">
+        <div class="project-card__heading">
+          <h3 class="project-card__name">{{ project.name }}</h3>
+          <span class="meta-label meta-label--quiet project-card__dates">{{ project.dates }}</span>
+        </div>
+      </div>
+      <p class="project-card__subtitle">{{ project.subtitle }}</p>
+      <div class="project-card__description">{{ project.description | markdownify }}</div>
+      {% if project.links.size > 0 %}
+      <div class="project-card__links">
+        {% for link in project.links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} &rarr;</a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__name">Jeffrey Ding He</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul>
+        {% for item in site.data.nav %}
+        <li>
+          {% if item.href %}
+          <a href="{{ item.href }}">{{ item.label }}</a>
+          {% else %}
+          <a href="/#{{ item.anchor }}" class="js-scroll-link">{{ item.label }}</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
