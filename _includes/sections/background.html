@@ -1,0 +1,21 @@
+{% assign background = site.data.experience | concat: site.data.education | sort: "sort" | reverse %}
+<section id="background" class="section">
+  <h2 class="section__heading">Background</h2>
+  <ul class="timeline">
+    {% for item in background %}
+    <li class="timeline__row">
+      <img class="timeline__logo" src="/{{ item.img }}" alt="{{ item.alt }}" loading="lazy">
+      <div class="timeline__body">
+        <div class="timeline__heading">
+          <h3 class="timeline__title">{{ item.title }}</h3>
+          <span class="timeline__company">{{ item.company }}</span>
+        </div>
+        {% if item.detail %}
+        <div class="timeline__detail">{{ item.detail | markdownify }}</div>
+        {% endif %}
+      </div>
+      <span class="meta-label meta-label--quiet timeline__dates">{{ item.dates }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

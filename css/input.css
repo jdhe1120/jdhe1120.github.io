@@ -1,418 +1,990 @@
 @import "tailwindcss";
 
-@source "../_layouts";
-@source "../_includes";
-@source "../index.html";
-@source "../blog";
-@source "../_posts";
-
 @theme {
-  --color-primary: #8d0e31;
-  --color-primary-dark: #48071a;
-  --color-body: #868e96;
-  --color-heading: #343a40;
-  --color-section-border: #dee2e6;
-  --color-social: #495057;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
 
-  --font-heading: "Saira Extra Condensed", serif;
-  --font-body: "Open Sans", serif;
+  --color-ink: #16140f;
+  --color-ink-soft: #4a4638;
+  --color-paper: #ffffff;
+  --color-line: #e8e4da;
 
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  /* ---------------------------------------------------------------
+     ACCENT COLOUR: change these four values together to reskin the
+     whole site. Everything else references them, so nothing else
+     needs touching.
 
-  --spacing-sidebar: 17rem;
+       crimson (current)      terracotta (previous)
+       --------------------   -----------------------
+       accent      #8d0e31    #a2401a
+       accent-tint #fdf2f5    #fbf3f0
+       accent-warm #faf7f8    #faf8f5
+       accent-code #f7f2f4    #f5f2ee
+     --------------------------------------------------------------- */
+  --color-accent: #8d0e31;
+  --color-accent-tint: #fdf2f5;  /* "lives here now" chip, table headers */
+  --color-accent-warm: #faf7f8;  /* table header background */
+  --color-accent-code: #f7f2f4;  /* inline code background */
 }
-
-/* === Base styles === */
 
 @layer base {
   html {
+    /* comfortably under the sticky .site-header's 70.4px height, so a section's
+       border-top tucks behind the header instead of showing as a second line.
+       The ~2.4px of overlap keeps it hidden at fractional browser zoom levels,
+       where sub-pixel rounding can otherwise reveal the seam. */
+    --header-h: 4.25rem;
     scroll-behavior: smooth;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-
-  /* Skip-to-content link */
-  .skip-link {
-    position: absolute;
-    top: -100%;
-    left: 0;
-    z-index: 100;
-    padding: 0.5rem 1rem;
-    background: var(--color-primary);
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .skip-link:focus {
-    top: 0;
-    color: white;
-  }
-
-  /* Focus indicators */
-  :focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+    /* offset lives on the scroll targets (scroll-margin-top); setting it here too
+       would stack and push sections a full header-height too far down */
   }
 
   body {
+    background: var(--color-paper);
+    color: var(--color-ink);
     font-family: var(--font-body);
-    padding-top: 54px;
-    color: var(--color-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
 
-  @media (min-width: 992px) {
-    body {
-      padding-top: 0;
-      padding-left: var(--spacing-sidebar);
-    }
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--color-heading);
-  }
-
-  h1 {
-    font-size: 3.5rem;
-    line-height: 1;
-  }
-
-  h2 {
-    font-size: 2.5rem;
-  }
-
-  h3 {
-    font-size: 1.75rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    font-size: 1.25rem;
-  }
-
-  h6 {
-    font-size: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 6rem;
-      line-height: 5.5rem;
-    }
-
-    h2 {
-      font-size: 3.5rem;
-    }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink);
   }
 
   a {
-    color: var(--color-primary);
+    color: inherit;
   }
 
-  a:hover, a:focus, a:active {
-    color: var(--color-primary-dark);
+  /* visually hidden but read by screen readers, used where meaning is carried
+     only by colour or an icon (e.g. the "live here now" place) */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 0.75rem 1.25rem;
+    z-index: 100;
+  }
+
+  .skip-link:focus {
+    left: 1rem;
+    top: 1rem;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: var(--color-paper);
   }
 }
 
-/* === Component styles === */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--d, 0) * 80ms);
+}
 
 @layer components {
-  .subheading {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-family: var(--font-heading);
-    font-size: 1.35rem;
+  /* ---------- header / nav ---------- */
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--color-paper) 92%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-line);
   }
 
-  /* Sidebar navigation */
-  #sideNav .nav-link {
+  .site-header__inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header__name {
+    font-family: var(--font-display);
     font-weight: 600;
-    text-transform: uppercase;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
   }
 
-  @media (min-width: 992px) {
-    #sideNav {
-      text-align: center;
-      position: fixed;
-      top: 0;
+  .site-nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .site-nav a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--color-ink-soft);
+    transition: color 0.15s ease;
+    position: relative;
+  }
+
+  .site-nav a:hover,
+  .site-nav a:focus-visible {
+    color: var(--color-accent);
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+
+  .nav-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--color-ink);
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .nav-toggle {
+      display: flex;
+    }
+
+    .site-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
       left: 0;
-      display: flex;
-      flex-direction: column;
-      width: var(--spacing-sidebar);
-      height: 100vh;
+      right: 0;
+      background: var(--color-paper);
+      border-bottom: 1px solid var(--color-line);
     }
 
-    #sideNav .navbar-brand {
-      display: flex;
-      margin: auto auto 0;
-      padding: 0.5rem;
-    }
-
-    #sideNav .img-profile {
-      max-width: 10rem;
-      max-height: 10rem;
-      border: 0.5rem solid rgb(255 255 255 / 0.2);
-    }
-
-    #sideNav #navMenu {
-      display: flex !important;
-      align-items: flex-start;
-      flex-grow: 0;
-      width: 100%;
-      margin-bottom: auto;
-    }
-
-    #sideNav #navMenu ul {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    #sideNav #navMenu .nav-link {
+    .site-nav.is-open {
       display: block;
     }
-  }
 
-  /* Active nav link from scrollspy */
-  .nav-link.active {
-    color: white;
-    font-weight: 700;
-  }
-
-  /* Resume sections */
-  .resume-section {
-    border-bottom: 1px solid var(--color-section-border);
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-  }
-
-  @media (min-width: 768px) {
-    .resume-section {
-      min-height: 100vh;
+    .site-nav ul {
+      flex-direction: column;
+      gap: 0;
+      padding: 0.5rem 1.5rem 1.5rem;
     }
 
-    .resume-date {
-      min-width: 18rem;
+    .site-nav li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-line);
     }
   }
 
-  @media (min-width: 992px) {
-    .resume-section {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
-    }
-  }
+  /* ---------- intro ---------- */
 
-  .resume-header {
+  .intro {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 4rem;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 2rem;
+    scroll-margin-top: var(--header-h);
   }
 
-  .resume-img {
-    height: 56px;
+  .intro__photo {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
     flex-shrink: 0;
+    border: 2px solid var(--color-accent);
   }
 
-  .resume-header h3 {
+  .intro__text {
+    min-width: 0;
+  }
+
+  @media (max-width: 640px) {
+    .intro {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+  }
+
+  .intro__eyebrow {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-size: 1.45rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+  }
+
+  .intro__credentials {
+    font-size: 1rem;
+    color: var(--color-ink-soft);
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro__statement {
+    font-size: clamp(1.5rem, 3.7vw, 2.6rem);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    max-width: 56ch;
+  }
+
+  /* ---------- interests ---------- */
+
+  .interests__group + .interests__group {
+    margin-top: 1.4rem;
+  }
+
+  .interests__grouphead {
+    display: block;
+    margin-bottom: 0.8rem;
+  }
+
+  .interests__strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.75rem;
+    list-style: none;
+  }
+
+  .interests__item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .interests__img {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .interests__img--circle {
+    border-radius: 50%;
+  }
+
+  .interests__img--square {
+    border-radius: 0.4rem;
+    background: var(--color-paper);
+    padding: 0.35rem;
+    border: 1px solid var(--color-line);
+    box-sizing: border-box;
+    object-fit: contain;
+  }
+
+  .interests__item:hover .interests__img,
+  .interests__item:focus-within .interests__img {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+  }
+
+  /* labels stay visible, hover-only tooltips were unreachable on touch devices,
+     which hid the most personal items from every mobile visitor */
+  .interests__label {
+    font-size: 0.82rem;
+    line-height: 1.3;
+    color: var(--color-ink-soft);
+    white-space: nowrap;
+  }
+
+  /* ---------- places (pin + label) ---------- */
+
+  .interests__strip--places {
+    gap: 0.7rem 1.5rem;
+  }
+
+  /* Every place sits in a tinted chip. The Shanghai tower is taller than the
+     chip and deliberately overflows it, which reads as intentional for a tower. */
+  .place {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: var(--color-accent-tint);
+    border-radius: 0.35rem;
+    padding: 0.3rem 0.65rem;
+  }
+
+  /* The pin is centred on the text's full line box, which includes descender
+     space. City names like "Seattle" have no descenders, so their visual mass
+     sits higher and the pin reads as dropped. This nudge aligns the pin to the
+     optical centre of the letters instead. The gap scales with font size, which
+     is why it was most obvious on large displays. */
+  .place__pin {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+    color: var(--color-ink-soft);
+    transition: color 0.25s ease;
+    position: relative;
+    top: -0.06em;
+  }
+
+  .place__name {
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+    white-space: nowrap;
+  }
+
+  /* sport icon, sized and nudged to match the SVG map pins beside it */
+  .place__sport {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+    object-fit: contain;
+    position: relative;
+    top: -0.06em;
+  }
+
+  /* Team crests are sized by HEIGHT rather than fitted to a square box, because
+     the two logos have opposite proportions (the Clippers wordmark is wide, the
+     Hull City shield is tall). Matching heights keeps them optically equal. */
+  .place__crest {
+    height: 1.6rem;
+    width: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+    position: relative;
+    top: -0.06em;
+  }
+
+  /* where I live now, house pin, accent colour, faint tinted chip */
+  /* the place lived in now inverts to solid accent, so it reads as clearly
+     different rather than just slightly different */
+  .place--current {
+    background: var(--color-accent);
+  }
+
+  .place--current .place__pin,
+  .place--current .place__name {
+    color: var(--color-paper);
+  }
+
+  .place--current .place__name {
+    font-weight: 500;
+  }
+
+  /* kept small so the multi-coloured emoji read as punctuation rather than
+     competing with the single-accent palette */
+  /* Every mark sits in an identical fixed box, whether it is an emoji glyph or
+     an image. This keeps the row even regardless of how a given browser renders
+     emoji: Brave and Chrome ship different emoji fonts, so glyph metrics vary,
+     and sizing by font-size alone made the row look ragged in one but not the
+     other. A fixed box removes that dependency entirely. */
+  .place__mark-box {
+    width: 1.6rem;
+    height: 1.6rem;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -0.06em;
+  }
+
+  .place__emoji {
+    font-size: 1.2rem;
     line-height: 1;
   }
 
-  /* Social icons */
-  .list-social-icons a {
-    color: var(--color-social);
-  }
-
-  .list-social-icons a:hover {
-    color: var(--color-primary);
-  }
-
-  .list-social-icons .fa-lg {
-    font-size: 1.75rem;
-  }
-
-  /* Blog prose styles */
-  .prose {
-    max-width: 65ch;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: var(--color-heading);
-  }
-
-  .prose p {
-    margin-bottom: 1.25em;
-  }
-
-  .prose h2 {
-    font-size: 1.75rem;
-    margin-top: 2em;
-    margin-bottom: 0.75em;
-  }
-
-  .prose h3 {
-    font-size: 1.35rem;
-    margin-top: 1.75em;
-    margin-bottom: 0.5em;
-  }
-
-  .prose ul, .prose ol {
-    margin-bottom: 1.25em;
-    padding-left: 1.5em;
-  }
-
-  .prose ul {
-    list-style-type: disc;
-  }
-
-  .prose ol {
-    list-style-type: decimal;
-  }
-
-  .prose li {
-    margin-bottom: 0.25em;
-  }
-
-  .prose blockquote {
-    border-left: 4px solid var(--color-primary);
-    padding-left: 1em;
-    margin-left: 0;
-    margin-bottom: 1.25em;
-    color: var(--color-body);
-    font-style: italic;
-  }
-
-  .prose pre {
-    background: #f6f8fa;
-    border-radius: 0.375rem;
-    padding: 1em;
-    overflow-x: auto;
-    margin-bottom: 1.25em;
-  }
-
-  .prose code {
-    font-size: 0.875em;
-  }
-
-  /* Rouge syntax highlighting — GitHub-style theme */
-  .highlight .c,
-  .highlight .c1,
-  .highlight .cm,
-  .highlight .cs {
-    color: #6a737d;
-    font-style: italic;
-  }
-  .highlight .k,
-  .highlight .kd,
-  .highlight .kn,
-  .highlight .kp,
-  .highlight .kr,
-  .highlight .kt {
-    color: #d73a49;
-  }
-  .highlight .s,
-  .highlight .s1,
-  .highlight .s2,
-  .highlight .sb,
-  .highlight .sc,
-  .highlight .sd,
-  .highlight .sh,
-  .highlight .sx {
-    color: #032f62;
-  }
-  .highlight .si,
-  .highlight .se {
-    color: #032f62;
-  }
-  .highlight .na {
-    color: #6f42c1;
-  }
-  .highlight .nb,
-  .highlight .bp {
-    color: #005cc5;
-  }
-  .highlight .nc,
-  .highlight .no {
-    color: #6f42c1;
-  }
-  .highlight .nd {
-    color: #6f42c1;
-  }
-  .highlight .nf,
-  .highlight .nx {
-    color: #6f42c1;
-  }
-  .highlight .ni {
-    color: #24292e;
-  }
-  .highlight .nl {
-    color: #005cc5;
-  }
-  .highlight .nn {
-    color: #24292e;
-  }
-  .highlight .nt {
-    color: #22863a;
-  }
-  .highlight .nv,
-  .highlight .vi,
-  .highlight .vc,
-  .highlight .vg,
-  .highlight .vs {
-    color: #e36209;
-  }
-  .highlight .o,
-  .highlight .ow {
-    color: #d73a49;
-  }
-  .highlight .m,
-  .highlight .mi,
-  .highlight .mf,
-  .highlight .mh,
-  .highlight .mo {
-    color: #005cc5;
-  }
-  .highlight .sr {
-    color: #032f62;
-  }
-  .highlight .ss {
-    color: #005cc5;
-  }
-  .highlight .err {
-    color: #cb2431;
-  }
-  .highlight .gd {
-    color: #cb2431;
-    background-color: #ffeef0;
-  }
-  .highlight .gi {
-    color: #22863a;
-    background-color: #f0fff4;
-  }
-
-  .prose img {
+  /* image mark used where an emoji would break, e.g. the Hong Kong flag,
+     since 🇭🇰 renders as an "HK" letter box on Windows */
+  .place__mark {
     max-width: 100%;
-    height: auto;
-    border-radius: 0.375rem;
-    margin-bottom: 1.25em;
+    max-height: 100%;
+    object-fit: contain;
   }
 
-  .prose a {
-    color: var(--color-primary);
+  /* a very tall subject (the Oriental Pearl Tower is roughly 1:4.75) is scaled
+     to the box height, so it stays inside the row like every other mark */
+  /* The tower artwork is widened in the PNG itself (the real silhouette is
+     roughly 1:4, stretched to 1:2) so it does not read as spindly next to the
+     emoji. Sized by height here, since the file now has the right proportions. */
+  /* the tower is taller than the other marks and is allowed to overflow the
+     chip, which reads as deliberate for a tower */
+  .place__mark--tall {
+    width: auto;
+    height: 145%;
+    max-height: none;
+  }
+
+  /* an item with no icon yet, reads as a deliberate chip, matching the
+     height of the icon rows so the strip keeps a consistent baseline */
+  .interests__item--textonly .interests__label {
+    border: 1px solid var(--color-line);
+    border-radius: 0.4rem;
+    padding: 0 0.7rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  /* ---------- meta label ----------
+     The site's one structural signature: small-caps display type used for every
+     piece of metadata (group headings, dates, roles). Applied consistently across
+     sections so the labelling reads as a system rather than per-component styling. */
+
+  .meta-label {
+    font-family: var(--font-display);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .meta-label--quiet {
+    color: var(--color-ink-soft);
+  }
+
+  /* ---------- generic section ---------- */
+
+  .section {
+    max-width: 64rem;
+    margin: 0 auto;
+    /* tight top so the heading sits close under the sticky header on anchor jumps;
+       roomier bottom to separate content from the next section's border */
+    padding: 1.25rem 1.5rem 2.75rem;
+    border-top: 1px solid var(--color-line);
+    scroll-margin-top: var(--header-h);
+  }
+
+  .section__heading {
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    margin-bottom: 1.75rem;
+  }
+
+  /* ---------- about ---------- */
+
+  .about__body {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-ink-soft);
+  }
+
+  .about__body + .about__body {
+    margin-top: 1.25rem;
+  }
+
+  .about__interests {
+    margin-top: 2rem;
+  }
+
+  .about__thesis {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  /* ---------- projects (also used by background) ---------- */
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--color-line);
+    border: 1px solid var(--color-line);
+  }
+
+  @media (max-width: 640px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-card {
+    background: var(--color-paper);
+    padding: 2rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .project-card:hover {
+    background: color-mix(in srgb, var(--color-accent) 5%, var(--color-paper));
+    transform: translateY(-2px);
+  }
+
+  .project-card--featured {
+    grid-column: 1 / -1;
+    border-left: 3px solid var(--color-accent);
+    padding-left: calc(2rem - 3px);
+  }
+
+  .project-card--featured .project-card__name {
+    font-size: 1.5rem;
+  }
+
+  .project-card--featured .project-card__description {
+    font-size: 1rem;
+  }
+
+  .project-card__logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .project-card__top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-card__heading {
+    min-width: 0;
+  }
+
+  .project-card__name {
+    font-size: 1.3rem;
+  }
+
+  /* type + colour come from .meta-label--quiet */
+  .project-card__dates {
+    display: block;
+    margin-top: 0.3rem;
+  }
+
+  .project-card__subtitle {
+    color: var(--color-accent);
+    font-size: 0.95rem;
+    margin: 0.35rem 0 1rem;
+    font-weight: 500;
+  }
+
+  .project-card__description {
+    font-size: 0.92rem;
+    color: var(--color-ink-soft);
+  }
+
+  .project-card__description p + p {
+    margin-top: 0.6rem;
+  }
+
+  .project-card__description a {
+    text-decoration: underline;
+    text-decoration-color: var(--color-line);
+    text-underline-offset: 2px;
+  }
+
+  .project-card__links {
+    margin-top: 1.1rem;
+    display: flex;
+    gap: 1.25rem;
+  }
+
+  .project-card__links a {
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .project-card__links a:hover {
     text-decoration: underline;
   }
 
-  .prose a:hover {
-    color: var(--color-primary-dark);
+  /* ---------- timeline (experience) ---------- */
+
+  .timeline__row {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .timeline__row:first-child {
+    padding-top: 0;
+  }
+
+  .timeline__row:last-child {
+    border-bottom: none;
+  }
+
+  .timeline__logo {
+    width: 2.3rem;
+    height: 2.3rem;
+    object-fit: contain;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  .timeline__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .timeline__heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .timeline__title {
+    font-size: 1rem;
+  }
+
+  .timeline__company {
+    color: var(--color-accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .timeline__detail {
+    color: var(--color-ink-soft);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+
+  .timeline__detail a {
+    color: var(--color-ink-soft);
+    text-decoration: underline;
+    text-decoration-color: var(--color-line);
+  }
+
+  /* type + colour come from .meta-label--quiet */
+  .timeline__dates {
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: center;
+  }
+
+  @media (max-width: 560px) {
+    .timeline__row {
+      flex-wrap: wrap;
+    }
+
+    .timeline__dates {
+      order: 3;
+      margin-left: calc(2rem + 1rem);
+    }
+  }
+
+  /* ---------- blog ---------- */
+
+  .blog-index__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-index__list li {
+    border-bottom: 1px solid var(--color-line);
+  }
+
+  .blog-index__list a {
+    display: flex;
+    align-items: baseline;
+    gap: 1.25rem;
+    padding: 1.1rem 0;
+    text-decoration: none;
+  }
+
+  /* date in a fixed left column: same width on every row, so the titles
+     all start at the same place and the dates scan vertically */
+  .blog-index__date {
+    font-size: 0.82rem;
+    color: var(--color-ink-soft);
+    white-space: nowrap;
+    flex-shrink: 0;
+    width: 6.5rem;
+  }
+
+  .blog-index__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+  }
+
+  .blog-index__title {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+  }
+
+  .blog-index__desc {
+    font-size: 0.9rem;
+    color: var(--color-ink-soft);
+    line-height: 1.5;
+  }
+
+  /* optional per-post thumbnail */
+  .blog-index__thumb {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;
+    border-radius: 0.3rem;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .blog-index__empty {
+    color: var(--color-ink-soft);
+  }
+
+  /* ---------- tags ---------- */
+
+  .tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .tag-filter__btn {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-soft);
+    background: none;
+    border: 1px solid var(--color-line);
+    border-radius: 0.3rem;
+    padding: 0.35rem 0.7rem;
+    cursor: pointer;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .tag-filter__btn:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .tag-filter__btn.is-active {
+    color: var(--color-paper);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  /* the meta cluster on the right of each row: tags then date */
+  .blog-index__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.1rem;
+  }
+
+  .tag-chip {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    border: 1px solid var(--color-line);
+    border-radius: 0.25rem;
+    padding: 0.15rem 0.4rem;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+
+  .post__meta .tag-chip {
+    margin-left: 0.4rem;
+  }
+
+  /* on narrow screens the date moves above the title rather than holding
+     a column, which would leave too little room for the title */
+  @media (max-width: 560px) {
+    .blog-index__list a {
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .blog-index__date {
+      width: 100%;
+    }
+  }
+
+  .post {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 5rem;
+  }
+
+  .post__back {
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    text-decoration: none;
+  }
+
+  .post__header h1 {
+    font-size: 2rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  .post__meta {
+    font-size: 0.85rem;
+    color: var(--color-ink-soft);
+    margin-bottom: 2.5rem;
+  }
+
+  .post__content {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--color-ink-soft);
+  }
+
+  .post__content h2 {
+    font-size: 1.4rem;
+    margin: 2.25rem 0 1rem;
+    color: var(--color-ink);
+  }
+
+  .post__content h3 {
+    font-size: 1.1rem;
+    margin: 1.75rem 0 0.75rem;
+    color: var(--color-ink);
+  }
+
+  /* tables scroll horizontally rather than forcing the page to,
+     which matters on mobile where a multi-column table cannot fit */
+  .post__content table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+  }
+
+  .post__content th,
+  .post__content td {
+    border: 1px solid var(--color-line);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .post__content th {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--color-ink);
+    background: var(--color-accent-warm);
+  }
+
+  .post__content ul,
+  .post__content ol {
+    margin: 0 0 1.25rem 1.25rem;
+    list-style: revert;
+  }
+
+  .post__content li {
+    margin-bottom: 0.4rem;
+  }
+
+  .post__content blockquote {
+    border-left: 2px solid var(--color-accent);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--color-ink-soft);
+  }
+
+  .post__content code {
+    background: var(--color-accent-code);
+    border-radius: 0.2rem;
+    padding: 0.1rem 0.3rem;
+    font-size: 0.9em;
+  }
+
+  .post__content pre code {
+    background: none;
+    padding: 0;
+  }
+
+  .post__content p {
+    margin-bottom: 1.25rem;
+  }
+
+  .post__content a {
+    color: var(--color-ink);
+    text-decoration: underline;
+    text-decoration-color: var(--color-line);
+  }
+
+  .post__content img {
+    max-width: 100%;
+    border-radius: 0.25rem;
+    margin: 1.5rem 0;
+  }
+
+  .post__content pre {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    padding: 1.25rem;
+    border-radius: 0.35rem;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ---------- footer ---------- */
+
+  .site-footer {
+    border-top: 1px solid var(--color-line);
+  }
+
+  .site-footer__inner {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .site-footer__social {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+  }
+
+  .site-footer__social a {
+    color: var(--color-ink-soft);
+    font-size: 1.05rem;
+    transition: color 0.15s ease;
+  }
+
+  .site-footer__social a:hover {
+    color: var(--color-accent);
+  }
+
+  .site-footer p {
+    font-size: 0.82rem;
+    color: var(--color-ink-soft);
   }
 }

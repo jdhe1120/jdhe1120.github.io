@@ -1,23 +1,15 @@
-- institution: Harvard Business School
-  degree: MBA Degree
+- title: MBA
+  company: Harvard Business School
   img: img/hbs.png
   alt: Harvard Business School logo
-  dates: August 2024 - May 2026
-  bullets:
-    - Co-President of AI Club, one of the largest clubs at HBS (~450 members)
-    - 'Held several Technical Learning Workshops (Using LLMs in a System, <a href="/blog/2025/02/18/the-rise-of-agentic-ai/">Rise of Agentic AI</a>) with hundreds of attendees collectively'
-    - Conducted research with <a target="_blank" href="https://www.hbs.edu/faculty/Pages/profile.aspx?facId=24284">Prof. Nien-hê Hsieh</a> on Ethics in Entrepreneurship in preparation for a potential new course offering
-    - Member of Entrepreneurship Club, Tech Club, Education Club, Healthcare Club
+  dates: 2024–2026
+  sort: 2024.8
+  detail: 'Co-President of the AI Club (~450 members). Hosted learning workshops on LLM Systems, <a href="/blog/2025/02/18/the-rise-of-agentic-ai/">Agentic AI</a>, and <a href="/blog/2026/03/25/evals-for-agentic-ai/">Evals</a>, as well as hackathons, socials, and project showcases.'
 
-- institution: Harvard University
-  degree: Computer Science, AB Degree
+- title: A.B. in Computer Science
+  company: Harvard University
   img: img/harvard.png
   alt: Harvard University logo
-  dates: August 2016 - May 2020
-  bullets:
-    - President of Harvard Open Data Project
-    - Director of Education of Harvard Computer Society
-    - Teaching Fellow for CS50, CS51, CS182, CS136, CS181
-    - Researcher at Harvard Data to Actionable Knowledge Lab
-    - Intramurals Captain of Mather House
-    - Student Mental Health Liaison
+  dates: 2016–2020
+  sort: 2016.8
+  detail: President, Harvard Open Data Project. John Harvard Scholar.

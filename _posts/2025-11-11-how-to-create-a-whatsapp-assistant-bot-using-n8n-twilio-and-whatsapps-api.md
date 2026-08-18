@@ -1,10 +1,11 @@
 ---
-title: "[Walkthrough] How to Create a WhatsApp Assistant Bot Using N8N, Twilio, and WhatsApp's API"
+title: "How to Build a WhatsApp Assistant Bot with N8N and Twilio"
+tags: [Tutorial]
 ---
 
 *I recently built a WhatsApp chatbot using N8N, Twilio, and Anthropic. See below for step-by-step walkthrough!*
 
-A few days ago, I built a WhatsApp assisstant in order to try a new way of managing my Google calendar. It turned out to be a lot more approachable than I expected, so I wanted to draft up a blog post to walk through how to build one yourself!
+A few days ago, I built a WhatsApp assistant in order to try a new way of managing my Google calendar. It turned out to be a lot more approachable than I expected, so I wanted to draft up a blog post to walk through how to build one yourself!
 
 In this post, I'll cover all the accounts you need, the API credits you'll need to pay for, and how to have your assistant working so you can actually start to text it and use it!
 
@@ -17,7 +18,7 @@ In this post, I'll cover all the accounts you need, the API credits you'll need 
 The architecture has three main pieces:
 
 - **N8N** is the orchestrator. It's an open-source workflow automation platform that connects everything together. Think of it as the tool that manages the flow of information. It takes an input, it does a set of tasks, and it provides the output.
-- **Twilio** is the bridge to WhatsApp.  Twilio is a service that helps users or companies manage texting over phone numbers (think customer support, communications, marketing, etc). One of it's offerings is to handle phone numbers to receive and send Whatsapp messages in convenient fashion.
+- **Twilio** is the bridge to WhatsApp. Twilio is a service that helps users or companies manage texting over phone numbers (think customer support, communications, marketing, etc). One of its offerings is handling phone numbers to receive and send WhatsApp messages.
 - **Anthropic's API** is the AI brain. It handles the conversation with the user, and has the intelligence for tool use, which allows you to connect to tools such as Google or Outlook to complete your request.
 
 The flow looks like this:

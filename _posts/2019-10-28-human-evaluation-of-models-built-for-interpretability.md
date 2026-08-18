@@ -1,5 +1,6 @@
 ---
-title: "[HCOMP Paper] Human Evaluation of Models Built for Interpretability"
+title: "Human Evaluation of the Interpretability of ML Models"
+tags: [Research]
 ---
 
 *This blog post summarizes the contents of a research paper I co-authored while at Harvard, published at <a target="_blank" href="https://doi.org/10.1609/hcomp.v7i1.5280">HCOMP '19</a> (AAAI Conference).*

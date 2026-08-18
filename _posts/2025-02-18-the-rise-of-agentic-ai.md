@@ -1,5 +1,6 @@
 ---
-title: "[HBS AI Club] The Rise of Agentic AI"
+title: "The Rise of Agentic AI"
+tags: [Tutorial]
 ---
 
 *This post is based on a Technical Learning Session I gave for the HBS AI Club in February 2025 on the Rise of Agentic AI.*
@@ -10,7 +11,7 @@ The term "agentic" has gotten a lot of hype recently, and I think a lot of peopl
 
 In general, people seem to agree that agentic AI systems are designed to make decisions as autonomously as possible, acting with limited human supervision. But beyond that, there are many different definitions floating around. Before we break it down, I think it's important to note that something being "agentic" isn't just a binary yes or no. Rather, there's very much a spectrum from less agentic to more agentic.
 
-In particular, there are five key design patterns that build up a system to be more agentic. Shoutout to Andrew Ng and his team who provide a very helpful course on Agentic AI on DeepLearning.ai where I learned many of these concepts from!
+In particular, there are five key design patterns that build up a system to be more agentic. Shoutout to Andrew Ng and his team who provide a very helpful course on Agentic AI on DeepLearning.AI where I learned many of these concepts from!
 
 **1. Self-Reflection.** First, it turns out that when an agent reflects on its own task, it is able to perform much better and act more 'agentically'. As an example, normally an AI might just write some code. But an agent might write the code, write unit tests, run the tests, reflect on why some failed, then fix the code. That's a key design pattern: to make something more agentic, you often need to have it look back at itself and think more about what it's been doing. There's a paper called [Reflexion](https://arxiv.org/abs/2303.11366) which illustrates exactly this concept.
 
@@ -18,7 +19,7 @@ In particular, there are five key design patterns that build up a system to be m
 
 **2. Autonomous Action.** When you think about something on the more agentic side, you want something that's able to work independently without too much intervention or a predefined plan. Here we can consider an example. One the one hand, you can have a stock recommendation chatbot. On the other hand, you can have a more "agentic" autonomous trading agent that's constantly analyzing market conditions, adjusting its strategy, executing trades, and generating daily reports for you without any human intervention.
 
-**3. Tool Use.** If you ask an LLM to solve a math problem, a normal LLM is simply predicting the next most probably set of words (tokens) to guess the solution. But if you give it access to code execution, you can achieve a lot more with the same model. Instead of predicting purely text, "agentic" AI has access to tools, whether that be search, email, image generation, code execution, etc. In the case of the math problem example, an "agentic" AI can solve the problem more accurately by predicting the code needed to solve the problem, then excecuting it.
+**3. Tool Use.** If you ask an LLM to solve a math problem, a normal LLM is simply predicting the next most probable set of words (tokens) to guess the solution. But if you give it access to code execution, you can achieve a lot more with the same model. Instead of predicting purely text, "agentic" AI has access to tools, whether that be search, email, image generation, code execution, etc. In the case of the math problem example, an "agentic" AI can solve the problem more accurately by predicting the code needed to solve the problem, then executing it.
 
 ![Tool use example](/img/blog/the-rise-of-agentic-ai/tool-use.png)
 
@@ -78,9 +79,9 @@ Some companies operate across many layers. LangChain shows up in multiple parts 
 
 ## Business & Ethical Implications
 
-When I first read the phrase "Service as a Software" (as opposed to Software as a Service), I actually thought it was a typo. and didn't think much of it. A few weeks later, as I was learning more about different startups' pricing models, I suddenly remembered the phrase from before and realized it wasn't a typo at all.
+When I first read the phrase "Service as a Software" (as opposed to Software as a Service), I actually thought it was a typo and didn't think much of it. A few weeks later, as I was learning more about different startups' pricing models, I suddenly remembered the phrase from before and realized it wasn't a typo at all.
 
-We've been in a world where software is a service: think Microsoft Office, your Netflix subscriptions, your Spotify subscriptions. But in this agentic paradigm, you can sometimes offer a service delivered as software. You're saying "let me just get everything done for you, then you can pay me" There's even a new phrase, "a-commerce" instead of e-commerce, like agentic commerce, where you always ask agents to do things for you.
+We've been in a world where software is a service: think Microsoft Office, your Netflix subscriptions, your Spotify subscriptions. But in this agentic paradigm, you can sometimes offer a service delivered as software. You're saying "let me just get everything done for you, then you can pay me." There's even a new phrase, "a-commerce" instead of e-commerce, like agentic commerce, where you always ask agents to do things for you.
 
 Personally, my view on the B2C side is I'm not so sure how the pricing model will work. But the B2B world may get significantly disrupted, because when you think about a service being replaced by software, suddenly a company is saving hundreds of thousands in salary, insurance, and overhead. This does mean that entry-level jobs and workflows may be most at risk. A software engineer just graduating this year will have a much harder time than a senior engineer who's doing architecture design and can use agents to complement their work. 
 
@@ -96,6 +97,6 @@ We're still in the very early stages. We haven't seen massive-scale agentic AI r
 
 But the field is moving incredibly fast. When we started school, there were no reasoning models. Since then, we've had o1, DeepSeek R1, and a whole new landscape. By the time we graduate in May 2026, I genuinely don't know where things will be.
 
-And this is just the "text" world. For the physical world of robotics and embodied agents, we're at an even earlier stage. There's a comapny called physical intelligence, working on building LLMs but based off physical actions instead of text. For example, robots could use physical intelligence to figure out how to pick up an egg, do laundry, or clean dishes. The same design patterns apply whether the agent is writing code or navigating a warehouse.
+And this is just the "text" world. For the physical world of robotics and embodied agents, we're at an even earlier stage. There's a company called Physical Intelligence working on building LLMs but based off physical actions instead of text. For example, robots could use physical intelligence to figure out how to pick up an egg, do laundry, or clean dishes. The same design patterns apply whether the agent is writing code or navigating a warehouse.
 
 The field is evolving so fast it's genuinely hard to keep up. New paradigms come out every month, models improve every month. I think the best thing any of us can do is keep learning and share what we find, because it's impossible for any one person to stay on top of all of it. Thank you for staying till the end, and hope you found this helpful!

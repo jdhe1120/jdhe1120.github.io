@@ -1,66 +1,58 @@
-(function() {
-  'use strict';
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.getElementById("site-nav");
 
-  // Mobile nav toggle
-  var toggler = document.getElementById('navToggler');
-  var navMenu = document.getElementById('navMenu');
-
-  if (toggler && navMenu) {
-    toggler.addEventListener('click', function() {
-      var isHidden = navMenu.classList.toggle('hidden');
-      toggler.setAttribute('aria-expanded', !isHidden);
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
     });
-  }
 
-  // Smooth scrolling for nav links
-  document.querySelectorAll('a.js-scroll-trigger[href*="#"]:not([href="#"])').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
-          location.hostname === this.hostname) {
-        var target = document.querySelector(this.hash);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
-  });
-
-  // Close responsive menu when a nav link is clicked
-  document.querySelectorAll('#sideNav .nav-link').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (navMenu && !navMenu.classList.contains('hidden') && window.innerWidth < 992) {
-        navMenu.classList.add('hidden');
-        if (toggler) {
-          toggler.setAttribute('aria-expanded', 'false');
-        }
-      }
-    });
-  });
-
-  // Scrollspy using Intersection Observer
-  var sections = document.querySelectorAll('section.resume-section');
-  var navLinks = document.querySelectorAll('#sideNav .js-scroll-trigger');
-
-  if (sections.length && navLinks.length) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          navLinks.forEach(function(link) {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + entry.target.id) {
-              link.classList.add('active');
-            }
-          });
-        }
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
       });
-    }, {
-      rootMargin: '-20% 0px -80% 0px'
-    });
-
-    sections.forEach(function(section) {
-      observer.observe(section);
     });
   }
 
-})();
+  // ---- blog tag filter ----
+  const filter = document.querySelector(".tag-filter");
+  if (filter) {
+    const buttons = filter.querySelectorAll(".tag-filter__btn");
+    const posts = document.querySelectorAll(".blog-index__list li");
+    const none = document.querySelector(".blog-index__none");
+
+    const apply = (tag) => {
+      let shown = 0;
+      posts.forEach((li) => {
+        const tags = (li.dataset.tags || "").split(",");
+        const match = tag === "all" || tags.includes(tag);
+        li.hidden = !match;
+        if (match) shown++;
+      });
+      if (none) none.hidden = shown > 0;
+
+      buttons.forEach((b) => {
+        const active = b.dataset.tag === tag;
+        b.classList.toggle("is-active", active);
+        b.setAttribute("aria-pressed", String(active));
+      });
+    };
+
+    buttons.forEach((b) => {
+      b.addEventListener("click", () => {
+        const tag = b.dataset.tag;
+        apply(tag);
+        // reflect the filter in the URL so it can be linked to and shared
+        history.replaceState(null, "", tag === "all" ? location.pathname : "#" + tag);
+      });
+    });
+
+    // honour a #Tag in the URL on load (post pages link here that way)
+    const initial = decodeURIComponent(location.hash.slice(1));
+    if (initial && [...buttons].some((b) => b.dataset.tag === initial)) {
+      apply(initial);
+    }
+  }
+});

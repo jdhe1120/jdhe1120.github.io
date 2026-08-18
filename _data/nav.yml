@@ -1,12 +1,8 @@
-- label: Home
-  anchor: page-top
+- label: About
+  anchor: about
 - label: Projects
   anchor: projects
-- label: Experience
-  anchor: experience
-- label: Education
-  anchor: education
-- label: Awards
-  anchor: awards
+- label: Background
+  anchor: background
 - label: Blog
-  anchor: blog
+  href: /blog/

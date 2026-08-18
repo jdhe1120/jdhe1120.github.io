@@ -1,5 +1,6 @@
 ---
-title: "[MSFT] Advancing Failure Prediction and Mitigation — Introducing Narya"
+title: "Predicting and Mitigating Hardware Failures in the Cloud (Narya)"
+tags: [Cloud]
 ---
 
 *This blog post was originally published on the [Microsoft Azure Blog](https://azure.microsoft.com/en-us/blog/advancing-failure-prediction-and-mitigation-introducing-narya/), which I co-authored with Azure CTO Mark Russinovich.*

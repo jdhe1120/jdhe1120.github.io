@@ -1,21 +1,17 @@
-title: Jeffrey He
-email: jhe@mba2026.hbs.edu
-bio: "Hi! I am currently pursuing an MBA (HBS '26) and previously studied Computer Science (Harvard '20). Some of my favorite things include teaching, music, and playing basketball! Also, <a href=\"#blog\">check out my blog</a> — I write about AI, product management, and whatever else I'm learning along the way!"
-profile_img: img/profile.jpg
+title: Jeffrey Ding He
+email: jdhe1120@gmail.com
+description: >-
+  Product manager and builder. Ex-Microsoft, currently an MBA at HBS.
+tagline: Product Manager & Builder
+credentials: HBS '26 | Harvard CS '20 | Former MSFT PM
+intro: I love teaching, music, and learning new languages.
 url: "https://jeffreydinghe.com"
 
-# Build settings
 markdown: kramdown
 highlighter: rouge
-kramdown:
-  syntax_highlighter: rouge
-plugins:
-  - jekyll-feed
-
-# Blog post permalink structure
+# matches the live site's existing URLs; changing this breaks every published link
 permalink: /blog/:year/:month/:day/:title/
 
-# Front matter defaults
 defaults:
   - scope:
       path: ""
@@ -23,13 +19,15 @@ defaults:
     values:
       layout: post
 
-# Exclude dev/build files from the Jekyll site
+plugins:
+  - jekyll-feed
+
 exclude:
-  - node_modules
-  - package.json
-  - package-lock.json
-  - css/input.css
-  - CLAUDE.md
   - README.md
+  - CLAUDE.md
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - node_modules
+  - css/input.css

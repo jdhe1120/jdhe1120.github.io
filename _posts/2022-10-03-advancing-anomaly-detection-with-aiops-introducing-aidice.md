@@ -1,5 +1,6 @@
 ---
-title: "[MSFT] Advancing Anomaly Detection with AIOps — Introducing AiDice"
+title: "Anomaly Detection with AIOps (AiDice)"
+tags: [Cloud]
 ---
 
 *This blog post was originally published on the <a target="_blank" href="https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/">Microsoft Azure Blog</a>, which I co-authored with Azure CTO Mark Russinovich.*
@@ -14,6 +15,6 @@ In one real-world case, we applied AiDice to monitor low memory events across mo
 
 ![Aggregate trend in low memory events looks normal overall](/img/blog/aidice-aggregate-trend.png)
 
-![AiDice localizes the anomaly to a specific pivot — a clear upward trend hidden in the aggregate](/img/blog/aidice-localized-trend.png)
+![AiDice localizes the anomaly to a specific pivot: a clear upward trend hidden in the aggregate](/img/blog/aidice-localized-trend.png)
 
 The full technical details are in the <a target="_blank" href="https://dl.acm.org/doi/abs/10.1145/3368089.3409741">ESEC/FSE 2020 paper</a>. To read the full blog post, <a target="_blank" href="https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/">see the Azure Blog &rarr;</a>

@@ -1,26 +1,25 @@
-<section class="resume-section px-4 lg:px-12 flex flex-col" id="projects">
-  <div class="my-auto">
-    <h2 class="mb-12">Projects</h2>
-
+<section id="projects" class="section">
+  <h2 class="section__heading">Projects</h2>
+  <div class="project-grid">
     {% for project in site.data.projects %}
-    <div class="resume-item flex flex-col md:flex-row mb-12">
-      <div class="mr-auto">
-        <div class="resume-header gap-3">
-          <img class="resume-img" src="{{ project.img | relative_url }}" alt="{{ project.alt }}">
-          <div>
-            <h3 class="mb-0">{{ project.name }}</h3>
-            <div class="subheading mb-4">
-              {% for link in project.links %}{% if forloop.index > 1 %} &middot; {% endif %}<a target="_blank" href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
-            </div>
-          </div>
+    <article class="project-card{% if project.featured %} project-card--featured{% endif %}">
+      <div class="project-card__top">
+        <img class="project-card__logo" src="/{{ project.img }}" alt="{{ project.alt }}" loading="lazy">
+        <div class="project-card__heading">
+          <h3 class="project-card__name">{{ project.name }}</h3>
+          <span class="meta-label meta-label--quiet project-card__dates">{{ project.dates }}</span>
         </div>
-        <p>
-          {{ project.description }}
-        </p>
       </div>
-      <div class="resume-date md:text-right">
-        <span class="text-primary">{{ project.dates }}</span>
+      <p class="project-card__subtitle">{{ project.subtitle }}</p>
+      <div class="project-card__description">{{ project.description | markdownify }}</div>
+      {% if project.links.size > 0 %}
+      <div class="project-card__links">
+        {% for link in project.links %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} &rarr;</a>
+        {% endfor %}
       </div>
-    </div>
+      {% endif %}
+    </article>
     {% endfor %}
+  </div>
 </section>

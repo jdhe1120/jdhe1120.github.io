@@ -1,57 +1,42 @@
-- title: Rock Summer Fellow at Rock Center for Entrepreneurship
-  company: Harvard Business School
-  img: img/hbs.png
-  alt: Harvard Business School logo
-  dates: May 2025 - Aug 2025
-  bullets:
-    - Received ~$8000 to work on venture over the summer
-    - <a target="_blank" href="https://www.hbs.edu/entrepreneurship/mba/rock-venture-catalyst">Rock Summer Fellowship</a> awarded to 100 students in the class
-
-- title: Product Manager 2
+- title: Product Manager II
   company: Microsoft
   img: img/microsoft.png
   alt: Microsoft logo
-  dates: Aug 2020 - April 2024
-  bullets:
-    - 'Productized state-of-the-art algorithms by <a target="_blank" href="https://www.microsoft.com/en-us/research/">MSFT Research</a> into an anomaly detection service serving 70+ teams (patented as <a target="_blank" href="https://patents.justia.com/patent/12189466">USPTO #12189466</a>)'
-    - Launched internal AIOps Web Portal (~70k views) to facilitate further cross-team collaborations
-    - Alumni of <a target="_blank" href="https://microsoftnewengland.com/maidap/">MAIDAP (Microsoft AI Development Acceleration Program)</a>
+  dates: 2020–2024
+  sort: 2020.8
+  detail: 'Productized <a target="_blank" href="https://www.microsoft.com/en-us/research/">Microsoft Research</a> algorithms into an anomaly-detection service for 70+ teams, now patented (<a target="_blank" href="https://patents.justia.com/patent/12189466">USPTO #12189466</a>). Launched an internal AIOps portal (~70k views). Alumni of <a target="_blank" href="https://microsoftnewengland.com/maidap/">MAIDAP</a>.'
 
 - title: Teaching Fellow
   company: Harvard University
   img: img/harvard.png
   alt: Harvard University logo
-  dates: August 2017 - May 2020
-  bullets:
-    - "Taught Machine Learning (CS181), Economics and Computation (CS136), Artificial Intelligence (CS182), Functional Programming (CS51), Intro to Computer Science (CS50)"
-    - "Led weekly sections of 20 undergraduates, held office hours, designed and graded problem sets"
-    - Received Award for Extraordinary Teaching in Extraordinary Times in 2020 Spring
-    - Received Bok Center Certificate of Distinction in Teaching in 2018, 2019, and 2020
-
-- title: PM Intern
-  company: Microsoft
-  img: img/microsoft.png
-  alt: Microsoft logo
-  dates: May 2019 - August 2019
-  bullets:
-    - "Researched, designed, and implemented a new workflow to improve the monthly support case review process (500 cases/month) for the Azure Stack team"
-    - Created Python algorithm that predicts action items for certain cases
-
-- title: Explorer Intern
-  company: Microsoft
-  img: img/microsoft.png
-  alt: Microsoft logo
-  dates: May 2018 - August 2018
-  bullets:
-    - "Built a new Microsoft Store feature (using Angular, Typescript, C#, and Jasmine) that provides publishers a detailed history of their product submissions broken down by category"
-    - Feature shipped to all Microsoft Store publishers
+  # sorted by END date (2020) rather than start, so this multi-year role sits with
+  # the period it ran through instead of below internships that started later
+  dates: 2017–2020
+  sort: 2020.5
+  detail: Taught CS50, CS51, CS136, CS181, CS182; rated 4.5+/5 each year and received Extraordinary Teaching Award (281/2500 TFs).
 
 - title: Undergraduate Researcher
   company: Harvard Data to Actionable Knowledge Lab
   img: img/harvard-seas.jpeg
   alt: Harvard SEAS logo
-  dates: September 2017 - Present
-  bullets:
-    - 'Ran research study on 600 subjects regarding the interpretability of ML algorithms with <a target="_blank" href="https://finale.seas.harvard.edu/">Prof. Finale Doshi-Velez</a>'
-    - 'Published paper at <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385"> HCI ''21: Designing AI for Trust and Collaboration in Time-Constrained Medical Decisions: A Sociotechnical Lens</a>'
-    - 'Published paper at <a target="_blank" href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19: Human Evaluation of Models Built for Interpretability</a>'
+  # sorted by END date (2020), same convention as Teaching Fellow
+  dates: 2017–2020
+  sort: 2020.4
+  detail: 'Studied ML interpretability with <a target="_blank" href="https://finale.seas.harvard.edu/">Prof. Finale Doshi-Velez</a>; published at <a target="_blank" href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19</a> and <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385">CHI ''21</a>.'
+
+- title: PM Intern
+  company: Microsoft
+  img: img/microsoft.png
+  alt: Microsoft logo
+  dates: 2019
+  sort: 2019.4
+  detail: Redesigned Azure Stack's monthly review of 500+ support cases, and built a Python model to predict resolution steps.
+
+- title: Software Engineering & PM Intern
+  company: Microsoft
+  img: img/microsoft.png
+  alt: Microsoft logo
+  dates: 2018
+  sort: 2018.4
+  detail: 'Shipped submission-history tooling to 1+ million Microsoft Store publishers (TypeScript, C#).'

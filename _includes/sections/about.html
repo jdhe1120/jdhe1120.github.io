@@ -1,23 +1,53 @@
-<section class="resume-section px-4 lg:px-12 flex flex-col" id="about">
-  <div class="my-auto">
-    <h1 class="mb-0">{{ site.title }}
-      <span class="text-primary"></span>
-    </h1>
-    <div class="subheading mb-12">
-      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-    </div>
-    <p class="mb-12">{{ site.bio }}</p>
-    <ul class="list-social-icons flex flex-wrap list-none p-0 mb-0">
-      {% for social in site.data.social %}
-      <li class="mr-2">
-        <a href="{{ social.url }}" aria-label="{{ social.label }}">
-          <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="{{ social.fa_prefix }} fa-{{ social.fa_icon }} fa-stack-1x fa-inverse"></i>
+<section id="about" class="section">
+  <h2 class="section__heading">About</h2>
+  <p class="about__body">I was born in the US, then moved to Tokyo, Hong Kong, and back to the US, while visiting my grandparents in Shanghai every year. Without realizing it, my upbringing has drawn me to <span class="about__thesis">building bridges between worlds</span>. As a TA in undergrad, I loved helping psych and gov majors apply the CS concepts they learned to their respective fields. As a PM at Microsoft, I loved serving as the connector across roles and geographies.</p>
+  <p class="about__body">Currently I'm a student at HBS, where I lead the AI Club and host AI Workshops for folks with no background knowledge. In my spare time, I've been building a language learning app, starting with Cantonese! Otherwise, you'll find me on a basketball court, or watching the Clippers and Hull City with more optimism than warranted&hellip;</p>
+  <div class="about__interests">
+    {% assign groups = "Places,Teams" | split: "," %}
+    {% for group in groups %}
+    {% assign items = site.data.interests | where: "group", group %}
+    {% if items.size > 0 %}
+    <div class="interests__group">
+      <span class="meta-label interests__grouphead">{{ group }}</span>
+      <ul class="interests__strip interests__strip--places">
+        {% for item in items %}
+        {% if group == "Places" %}
+        {% comment %} Places use a uniform map pin, landmark icons were
+        indistinguishable from each other at this size. Anywhere that is home
+        gets a house pin; the one lived in now additionally gets accent styling
+        and a chip, which is what keeps it distinct from the other homes. {% endcomment %}
+        <li class="place{% if item.current %} place--current{% endif %}">
+          {% if item.home or item.current %}
+          <svg class="place__pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11.2 12 4l8 7.2"/><path d="M6.4 10.4V19h11.2v-8.6"/><path d="M10.2 19v-4.4h3.6V19"/></svg>
+          {% else %}
+          <svg class="place__pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11z"/><circle cx="12" cy="10" r="2.6"/></svg>
+          {% endif %}
+          <span class="place__name">{{ item.label }}{% if item.current %} <span class="sr-only">(where I live now)</span>{% elsif item.home %} <span class="sr-only">(home)</span>{% endif %}</span>
+          {% if item.emoji or item.mark %}
+          <span class="place__mark-box">
+            {% if item.emoji %}<span class="place__emoji" role="img" aria-label="{{ item.emoji_label }}">{{ item.emoji }}</span>{% endif %}
+            {% if item.mark %}<img class="place__mark{% if item.mark_tall %} place__mark--tall{% endif %}" src="/{{ item.mark }}" alt="{{ item.mark_label }}" loading="lazy">{% endif %}
           </span>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
+          {% endif %}
+        </li>
+        {% else %}
+        {% comment %} Teams mirror the Places structure: a line-art sport icon
+        classifies, the crest identifies. The sport icons are recoloured to the
+        same ink-soft tone as the map pin and house so they read as one family. {% endcomment %}
+        <li class="place">
+          {% if item.sport %}
+          <img class="place__sport" src="/img/icon-{{ item.sport }}.png" alt="" loading="lazy">
+          {% endif %}
+          <span class="place__name">{{ item.label }}</span>
+          {% if item.img %}
+          <img class="place__crest" src="/{{ item.img }}" alt="{{ item.alt }}" loading="lazy">
+          {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
   </div>
 </section>

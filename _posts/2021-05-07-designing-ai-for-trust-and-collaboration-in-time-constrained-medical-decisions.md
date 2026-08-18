@@ -1,5 +1,6 @@
 ---
-title: "[CHI Paper] Designing AI for Trust and Collaboration in Time-Constrained Medical Decisions"
+title: "Designing AI for Trust in Medical Decisions"
+tags: [Research]
 ---
 
 *This blog post summarizes the contents of the research paper I co-authored while at Harvard, published at <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385">CHI '21</a> (ACM Conference on Human Factors in Computing Systems).*
