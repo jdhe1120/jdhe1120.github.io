@@ -4,9 +4,6 @@
   alt: Cantonese Level Up logo
   dates: Feb 2026 – Present
   featured: true
-  links:
-    - label: GitHub
-      url: "https://github.com/jdhe1120/cantonese-level-up"
   description: |
     Most language apps let you pick from pre-set levels, but those levels are either too easy or too hard. In my case, I can understand spoken Cantonese and read traditional characters, but I'm weak on speaking. That forced me to start from zero, where I wasted hours on apps that assumed I couldn't read. So I built my own.
 
