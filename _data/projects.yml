@@ -4,10 +4,13 @@
   alt: Cantonese Level Up logo
   dates: Feb 2026 – Present
   featured: true
+  links:
+    - label: Website
+      url: "https://cantolevelup.jeffreydinghe.com"
   description: |
     Most language apps let you pick from pre-set levels, but those levels are either too easy or too hard. In my case, I can understand spoken Cantonese and read traditional characters, but I'm weak on speaking. That forced me to start from zero, where I wasted hours on apps that assumed I couldn't read. So I built my own.
 
-    Cantonese Level Up lets you define where you already are and builds lessons around it. I built a feature that allows you to drop a YouTube link and get a live lesson with Jyutping, written Chinese, and English, then convert what you learned into flashcards, quizzes, and pronunciation practice. Started this as a tool just for myself, but now friends use it too.
+    Cantonese Level Up lets Mandarin speakers define where they already are and builds lessons around it. I built a feature that allows you to drop a YouTube link and get a live lesson with Jyutping, written Chinese, and English, then convert what you learned into flashcards, quizzes, and pronunciation practice. Started this as a tool just for myself, but now friends use it too.
 
 - name: AorB Bot
   subtitle: PM and Coding AI Agent

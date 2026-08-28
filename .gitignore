@@ -6,6 +6,10 @@ _site
 .bundle
 .playwright-mcp/
 
+# Built artifacts (GitHub Actions builds these on deploy)
+css/resume.min.css
+js/resume.min.js
+
 # Screenshots
 after-fix.png
 full-page.png
