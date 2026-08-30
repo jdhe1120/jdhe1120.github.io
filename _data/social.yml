@@ -10,3 +10,7 @@
   url: "https://github.com/jdhe1120"
   fa_icon: github
   fa_prefix: fab
+- label: Google Scholar
+  url: "https://scholar.google.com/citations?user=BSlp4OIAAAAJ"
+  fa_icon: google-scholar
+  fa_prefix: fab
