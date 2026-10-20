@@ -248,10 +248,30 @@
   }
 
   .intro__credentials {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1.25rem;
     font-size: 1rem;
     color: var(--color-ink-soft);
     letter-spacing: 0.02em;
     margin-bottom: 1.5rem;
+  }
+
+  .intro__social {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  .intro__social a {
+    color: var(--color-ink-soft);
+    transition: color 0.15s ease;
+  }
+
+  .intro__social a:hover,
+  .intro__social a:focus-visible {
+    color: var(--color-accent);
   }
 
   .intro__statement {
@@ -503,6 +523,21 @@
     margin-top: 2rem;
   }
 
+  /* accent like .about__thesis, plus a faint underline so it reads as a link */
+  .about__body a {
+    color: var(--color-accent);
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
+    text-underline-offset: 3px;
+    transition: text-decoration-color 0.15s ease;
+  }
+
+  .about__body a:hover,
+  .about__body a:focus-visible {
+    text-decoration-color: var(--color-accent);
+  }
+
   .about__thesis {
     color: var(--color-accent);
     font-weight: 500;
@@ -567,8 +602,11 @@
     min-width: 0;
   }
 
+  /* optical nudge: large capitals (C, H, N) carry more left side-bearing than
+     the small date label below, so the title looked indented by ~1px */
   .project-card__name {
     font-size: 1.3rem;
+    margin-left: -0.03em;
   }
 
   /* type + colour come from .meta-label--quiet */
@@ -593,6 +631,118 @@
     margin-top: 0.6rem;
   }
 
+  .project-card__description ul {
+    margin-top: 0.75rem;
+    padding-left: 1.1rem;
+    list-style: disc;
+  }
+
+  .project-card__description li + li {
+    margin-top: 0.4rem;
+  }
+
+  .project-card__description li::marker {
+    color: var(--color-accent);
+  }
+
+  .project-card__description strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  /* The intro paragraph sits beside the previews; the bullets and links run
+     full width underneath. display: contents lifts the description's children
+     into this grid so they can be placed individually. */
+  .project-card__body--with-previews {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+    gap: 1rem 2.5rem;
+    align-items: start;
+  }
+
+  .project-card__body--with-previews .project-card__main,
+  .project-card__body--with-previews .project-card__description {
+    display: contents;
+  }
+
+  .project-card__body--with-previews .project-card__description > p {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  /* pulled up into the empty space beside the title, so the stack sits
+     level with the card heading and no gap opens above the bullets */
+  .project-card__body--with-previews .preview-stack {
+    grid-column: 2;
+    grid-row: 1;
+    margin-top: -4.5rem;
+  }
+
+  .project-card__body--with-previews .project-card__description > ul,
+  .project-card__body--with-previews .project-card__links {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+
+  @media (max-width: 760px) {
+    .project-card__body--with-previews {
+      grid-template-columns: 1fr;
+    }
+
+    /* previews lead on narrow screens, kept small so the text follows quickly */
+    .project-card__body--with-previews .preview-stack {
+      grid-column: 1;
+      grid-row: 1;
+      max-width: 22rem;
+      margin-top: 0;
+    }
+
+    .project-card__body--with-previews .project-card__description > p {
+      grid-row: 2;
+    }
+  }
+
+  /* front item sits in normal flow; the one behind is offset up and right */
+  .preview-stack {
+    position: relative;
+    padding-top: 13%;
+  }
+
+  .preview-stack__item {
+    display: block;
+    width: 84%;
+    background: var(--color-paper);
+    border: 1px solid var(--color-line);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--color-ink) 12%, transparent);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .preview-stack__item:first-child {
+    position: relative;
+    z-index: 2;
+  }
+
+  .preview-stack__item:not(:first-child) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .preview-stack__item:hover,
+  .preview-stack__item:focus-visible {
+    z-index: 3;
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+  }
+
+  .preview-stack__item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 630;
+  }
+
   .project-card__description a {
     text-decoration: underline;
     text-decoration-color: var(--color-line);
@@ -602,10 +752,12 @@
   .project-card__links {
     margin-top: 1.1rem;
     display: flex;
-    gap: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.25rem;
   }
 
   .project-card__links a {
+    white-space: nowrap;
     font-size: 0.85rem;
     text-decoration: none;
     color: var(--color-accent);
@@ -674,6 +826,29 @@
     color: var(--color-ink-soft);
     text-decoration: underline;
     text-decoration-color: var(--color-line);
+  }
+
+  .writing__link {
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .writing__link:hover,
+  .writing__link:focus-visible {
+    color: var(--color-accent);
+  }
+
+  .writing__all {
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .writing__all:hover {
+    text-decoration: underline;
   }
 
   /* type + colour come from .meta-label--quiet */

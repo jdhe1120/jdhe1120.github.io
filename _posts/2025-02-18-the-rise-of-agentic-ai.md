@@ -1,5 +1,8 @@
 ---
 title: "The Rise of Agentic AI"
+description: "What makes AI agentic: five design patterns, the agentic AI stack, and what it means for business."
+featured: true
+venue: "HBS AI Club workshop"
 tags: [Tutorial]
 ---
 

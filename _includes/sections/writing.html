@@ -1,0 +1,26 @@
+{% comment %} Posts opt in with `featured: true`; `venue` is the accent label
+(where the piece was given or published). Rows reuse the Background timeline
+styles so the two sections read as one system. {% endcomment %}
+{% assign featured = site.posts | where: "featured", true %}
+{% if featured.size > 0 %}
+<section id="writing" class="section">
+  <h2 class="section__heading">Writing</h2>
+  <ul class="timeline">
+    {% for post in featured %}
+    <li class="timeline__row">
+      <div class="timeline__body">
+        <div class="timeline__heading">
+          <h3 class="timeline__title"><a class="writing__link" href="{{ post.url }}">{{ post.title }}</a></h3>
+          {% if post.venue %}<span class="timeline__company">{{ post.venue }}</span>{% endif %}
+        </div>
+        {% if post.description %}
+        <p class="timeline__detail">{{ post.description }}</p>
+        {% endif %}
+      </div>
+      <span class="meta-label meta-label--quiet timeline__dates">{{ post.date | date: "%b %Y" }}</span>
+    </li>
+    {% endfor %}
+  </ul>
+  <a class="writing__all" href="/blog/">All posts &rarr;</a>
+</section>
+{% endif %}

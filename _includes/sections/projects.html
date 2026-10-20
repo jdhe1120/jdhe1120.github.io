@@ -7,18 +7,33 @@
         <img class="project-card__logo" src="/{{ project.img }}" alt="{{ project.alt }}" loading="lazy">
         <div class="project-card__heading">
           <h3 class="project-card__name">{{ project.name }}</h3>
-          <span class="meta-label meta-label--quiet project-card__dates">{{ project.dates }}</span>
+          <span class="meta-label meta-label--quiet project-card__dates">{% if project.role %}{{ project.role }} &middot; {% endif %}{{ project.dates }}</span>
         </div>
       </div>
       <p class="project-card__subtitle">{{ project.subtitle }}</p>
-      <div class="project-card__description">{{ project.description | markdownify }}</div>
-      {% if project.links.size > 0 %}
-      <div class="project-card__links">
-        {% for link in project.links %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} &rarr;</a>
-        {% endfor %}
+      <div class="project-card__body{% if project.previews %} project-card__body--with-previews{% endif %}">
+        <div class="project-card__main">
+          <div class="project-card__description">{{ project.description | markdownify }}</div>
+          {% if project.links.size > 0 %}
+          <div class="project-card__links">
+            {% for link in project.links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }} &rarr;</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+        {% if project.previews %}
+        {% comment %} First preview sits in front; the rest peek out behind it,
+        offset up and right. Hovering one brings it to the front. {% endcomment %}
+        <div class="preview-stack">
+          {% for preview in project.previews %}
+          <a class="preview-stack__item" href="{{ preview.url }}" target="_blank" rel="noopener">
+            <img src="/{{ preview.img }}" alt="{{ preview.alt }}" loading="lazy">
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
     </article>
     {% endfor %}
   </div>

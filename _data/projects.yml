@@ -1,21 +1,33 @@
-- name: Cantonese Level Up
-  subtitle: A language app that meets you where you already are
-  img: img/cantonese.png
-  alt: Cantonese Level Up logo
+- name: CantoLevelUp & MandarinLevelUp
+  role: Builder
+  subtitle: AI-powered language apps for heritage speakers
+  img: img/levelup.png
+  alt: CantoLevelUp and MandarinLevelUp logo
   dates: Feb 2026 – Present
   featured: true
+  previews:
+    - img: img/cantolevelup-preview.jpg
+      alt: "CantoLevelUp: a Cantonese video transcript with Jyutping and word lookup"
+      url: "https://cantolevelup.com"
+    - img: img/mandarinlevelup-preview.jpg
+      alt: "MandarinLevelUp: a Mandarin video transcript with pinyin and word lookup"
+      url: "https://mandarinlevelup.com"
   links:
-    - label: Website
-      url: "https://cantolevelup.jeffreydinghe.com"
+    - label: cantolevelup.com
+      url: "https://cantolevelup.com"
+    - label: mandarinlevelup.com
+      url: "https://mandarinlevelup.com"
   description: |
-    Most language apps let you pick from pre-set levels, but those levels are either too easy or too hard. In my case, I can understand spoken Cantonese and read traditional characters, but I'm weak on speaking. That forced me to start from zero, where I wasted hours on apps that assumed I couldn't read. So I built my own.
+    Learners improve by watching videos, studying flashcards, and speaking with AI conversation partners, all at a level slightly above their current one (comprehensible input). That's possible because listening, speaking, and reading are tracked separately. Learners can also import YouTube videos they already watch, get transcripts, and sort them by how well they fit their level.
 
-    Cantonese Level Up lets Mandarin speakers define where they already are and builds lessons around it. I built a feature that allows you to drop a YouTube link and get a live lesson with Jyutping, written Chinese, and English, then convert what you learned into flashcards, quizzes, and pronunciation practice. Started this as a tool just for myself, but now friends use it too.
+    - **Speech recognition:** Benchmarked 9 Cantonese speech-to-text models on ~600 clips and selected an open-source Qwen3-ASR model with a 4.5% character error rate, beating paid APIs like Gemini and MAI <span style="white-space: nowrap">(6–27%)</span>.
+    - **Cost:** Self-hosted the open-source model on Modal's scale-to-zero GPUs instead of paying per call for commercial APIs, making transcription both more accurate and 80% cheaper.
+    - **Evals:** Built objective (e.g., target-language-only) and subjective (e.g., naturalness) evals to choose the conversation-partner LLM, then calibrated LLM judges against my own hand labels (Cohen's kappa); switching to Microsoft Decision-1 cut eval spend ~80%.
 
-- name: AorB Bot
-  subtitle: PM and Coding AI Agent
+- name: AorB
+  subtitle: AI SWE & PM Agent
   img: img/aorb.png
-  alt: AorB Bot logo
+  alt: AorB logo
   dates: Aug 2025 – Dec 2025
   links:
     - label: Demo
@@ -27,9 +39,9 @@
   subtitle: AI patient intake tool piloted with Mass General Brigham
   img: img/health-agent.png
   alt: Neurosurgery Intake Assistant icon
-  dates: Jun 2025 – Nov 2025
+  dates: Jun 2025 – Dec 2025
   description: |
-    Selected as an <a target="_blank" href="https://www.hbs.edu/entrepreneurship/mba/rock-venture-catalyst">HBS Rock Summer Fellow</a> (a Harvard entrepreneurship fellowship) for an AI patient-doctor matching concept; pivoted to clinical intake with neurosurgeons at Mass General Brigham, piloted with patients. Recognized as a Harvard iLab Venture.
+    Selected as an <a target="_blank" href="https://www.hbs.edu/entrepreneurship/mba/rock-venture-catalyst">HBS Rock Summer Fellow</a> for an AI patient–doctor matching concept; then joined forces with a Mass General Brigham neurosurgery team building an AI intake assistant, working on customer discovery and business strategy through a real-patient pilot. Recognized as a Harvard iLab Venture.
 
 - name: Harvard Open Data Project
   subtitle: Harvard's first open data catalog

@@ -2,7 +2,18 @@
   <img class="intro__photo reveal" style="--d: 0" src="/img/profile.jpg" alt="Jeffrey Ding He">
   <div class="intro__text">
     <p class="intro__eyebrow reveal" style="--d: 1">{{ site.tagline }}</p>
-    <p class="intro__credentials reveal" style="--d: 2">{{ site.credentials }}</p>
+    <div class="intro__credentials reveal" style="--d: 2">
+      <span>{{ site.credentials }}</span>
+      <ul class="intro__social">
+        {% for link in site.data.social %}
+        <li>
+          <a href="{{ link.url }}" aria-label="{{ link.label }}" target="_blank" rel="noopener">
+            <i class="{{ link.fa_prefix }} fa-{{ link.fa_icon }}" aria-hidden="true"></i>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
     <h1 class="intro__statement reveal" style="--d: 3">{{ site.intro }}</h1>
   </div>
 </section>

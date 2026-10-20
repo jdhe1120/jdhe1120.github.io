@@ -1,5 +1,6 @@
 ---
 title: "Human Evaluation of the Interpretability of ML Models"
+description: "Experiments on which kinds of model complexity actually make ML models harder for people to understand."
 tags: [Research]
 ---
 

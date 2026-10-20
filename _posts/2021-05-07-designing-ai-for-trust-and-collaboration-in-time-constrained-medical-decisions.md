@@ -1,5 +1,6 @@
 ---
 title: "Designing AI for Trust in Medical Decisions"
+description: "Co-designing with 14 primary care providers to learn what makes clinicians trust AI decision support."
 tags: [Research]
 ---
 

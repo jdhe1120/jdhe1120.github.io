@@ -1,5 +1,6 @@
 ---
 title: "Predicting and Mitigating Hardware Failures in the Cloud (Narya)"
+description: "Predicting Azure host failures and choosing the best mitigation, cutting VM interruptions by 26%."
 tags: [Cloud]
 ---
 

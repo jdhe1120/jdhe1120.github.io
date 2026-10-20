@@ -1,5 +1,6 @@
 ---
 title: "How to Build a WhatsApp Assistant Bot with N8N and Twilio"
+description: "A step-by-step guide to a WhatsApp calendar assistant built with N8N, Twilio, and Claude."
 tags: [Tutorial]
 ---
 

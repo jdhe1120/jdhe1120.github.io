@@ -1,5 +1,8 @@
 ---
 title: "Evals for Improving Agentic AI Workflows"
+description: "Why AI agents need measurement, and how to build evals that systematically improve them."
+featured: true
+venue: "HBS AI Club workshop"
 tags: [Tutorial]
 ---
 

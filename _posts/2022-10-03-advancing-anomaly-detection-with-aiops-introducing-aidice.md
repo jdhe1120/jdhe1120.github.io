@@ -1,5 +1,8 @@
 ---
 title: "Anomaly Detection with AIOps (AiDice)"
+description: "How Azure and Microsoft Research pinpoint anomalies hidden across dozens of dimensions of cloud telemetry."
+featured: true
+venue: "Microsoft Azure Blog, with Mark Russinovich"
 tags: [Cloud]
 ---
 

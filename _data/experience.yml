@@ -4,7 +4,7 @@
   alt: Microsoft logo
   dates: 2020–2024
   sort: 2020.8
-  detail: 'Productized <a target="_blank" href="https://www.microsoft.com/en-us/research/">Microsoft Research</a> algorithms into an anomaly-detection service for 70+ teams, now patented (<a target="_blank" href="https://patents.justia.com/patent/12189466">USPTO #12189466</a>). Launched an internal AIOps portal (~70k views). Alumni of <a target="_blank" href="https://microsoftnewengland.com/maidap/">MAIDAP</a>.'
+  detail: 'Took <a target="_blank" href="https://www.microsoft.com/en-us/research/">Microsoft Research</a> algorithms into production as a patented anomaly-detection platform (<a target="_blank" href="https://patents.justia.com/patent/12189466">USPTO #12189466</a>), growing it from 0 to 70+ Azure and M365 teams. Launched Microsoft''s first internal AIOps portal (~70k views) and co-authored Azure CTO Mark Russinovich''s public <a target="_blank" href="https://azure.microsoft.com/en-us/blog/advancing-anomaly-detection-with-aiops-introducing-aidice/">AIOps blog series</a>. Alumnus of <a target="_blank" href="https://microsoftnewengland.com/maidap/">MAIDAP</a>.'
 
 - title: Teaching Fellow
   company: Harvard University
@@ -14,7 +14,7 @@
   # the period it ran through instead of below internships that started later
   dates: 2017–2020
   sort: 2020.5
-  detail: Taught CS50, CS51, CS136, CS181, CS182; rated 4.5+/5 each year and received Extraordinary Teaching Award (281/2500 TFs).
+  detail: Taught Machine Learning, AI, Econ & Computation, Functional Programming, and Intro CS (CS181, CS182, CS136, CS51, CS50). Won four teaching awards, including Extraordinary Teaching in Extraordinary Times (281 of 2,500 TFs).
 
 - title: Undergraduate Researcher
   company: Harvard Data to Actionable Knowledge Lab
@@ -23,7 +23,7 @@
   # sorted by END date (2020), same convention as Teaching Fellow
   dates: 2017–2020
   sort: 2020.4
-  detail: 'Studied ML interpretability with <a target="_blank" href="https://finale.seas.harvard.edu/">Prof. Finale Doshi-Velez</a>; published at <a target="_blank" href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19</a> and <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385">CHI ''21</a>; <a target="_blank" href="https://scholar.google.com/citations?user=BSlp4OIAAAAJ">Google Scholar</a>.'
+  detail: 'Studied ML interpretability with <a target="_blank" href="https://finale.seas.harvard.edu/">Prof. Finale Doshi-Velez</a>, running a 600-participant study of how people understand ML models. Published at <a target="_blank" href="https://aaai.org/ojs/index.php/HCOMP/article/view/5280">AAAI HCOMP ''19</a> and <a target="_blank" href="https://dl.acm.org/doi/10.1145/3411764.3445385">CHI ''21</a>; <a target="_blank" href="https://scholar.google.com/citations?user=BSlp4OIAAAAJ">Google Scholar</a>.'
 
 - title: PM Intern
   company: Microsoft
