@@ -20,10 +20,6 @@
   description: |
     Learners improve by watching videos, studying flashcards, and speaking with AI conversation partners, all at a level slightly above their current one (comprehensible input). That's possible because listening, speaking, and reading are tracked separately. Learners can also import YouTube videos they already watch, get transcripts, and sort them by how well they fit their level.
 
-    - **Speech recognition:** Benchmarked 9 Cantonese speech-to-text models on ~600 clips and selected an open-source Qwen3-ASR model with a 4.5% character error rate, beating paid APIs like Gemini and MAI <span style="white-space: nowrap">(6–27%)</span>.
-    - **Cost:** Self-hosted the open-source model on Modal's scale-to-zero GPUs instead of paying per call for commercial APIs, making transcription both more accurate and 80% cheaper.
-    - **Evals:** Built objective (e.g., target-language-only) and subjective (e.g., naturalness) evals to choose the conversation-partner LLM, then calibrated LLM judges against my own hand labels (Cohen's kappa); switching to Microsoft Decision-1 cut eval spend ~80%.
-
 - name: AorB
   subtitle: AI SWE & PM Agent
   img: img/aorb.png
